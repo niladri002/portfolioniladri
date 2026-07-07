@@ -1,0 +1,964 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="Niladri Chatterjee — Brand Identity & Visual Designer from India. Creating meaningful visual identities, packaging systems, and digital experiences." />
+  <meta property="og:title" content="Niladri Chatterjee — Brand Identity Designer" />
+  <meta property="og:description"
+    content="Creating meaningful visual identities, packaging systems, websites, and digital experiences that help businesses grow." />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <title>Niladri Chatterjee — Brand Identity & Visual Designer</title>
+
+  <!-- Google Fonts: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600&display=swap"
+    rel="stylesheet">
+
+
+  <!-- Fontshare: Clash Display + Satoshi -->
+  <link href="https://api.fontshare.com/v2/css?f[]=clash-display@700,600,500&f[]=satoshi@700,500,400&display=swap"
+    rel="stylesheet" />
+
+  <!-- GSAP -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+  <!-- Lenis Smooth Scroll -->
+  <script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+
+  <!-- VanillaTilt -->
+  <script src="https://unpkg.com/vanilla-tilt@1.8.1/dist/vanilla-tilt.min.js"></script>
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="/style.css">
+
+  <!-- Custom icon -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+</head>
+
+<body>
+
+  <!-- ═══════════════════════════════════════════════════ -->
+  <!-- LOADER                                              -->
+  <!-- ═══════════════════════════════════════════════════ -->
+  <div id="loader">
+    <div class="loader-inner">
+      <div class="loader-logo">
+        <!-- <span class="loader-logo-n">N</span><span class="loader-logo-c">C</span> -->
+        <img src="/images/logo.png" alt="Logo" class="loader-logo-image">
+      </div>
+      <div class="loader-bar-wrap">
+        <div class="loader-bar"></div>
+      </div>
+      <div class="loader-percent"><span id="loader-num">0</span>%</div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════ -->
+  <!-- CUSTOM CURSOR                                       -->
+  <!-- ═══════════════════════════════════════════════════ -->
+
+  <div id="cursor">
+    <div class="cursor-dot"></div>
+    <div class="cursor-ring"></div>
+    <span class="cursor-label">VIEW</span>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════ -->
+  <!-- NAVIGATION                                          -->
+  <!-- ═══════════════════════════════════════════════════ -->
+  <header id="nav">
+    <nav class="nav-inner container">
+      <a href="#" class="nav-logo" aria-label="Niladri Chatterjee">
+        <img src="/images/logo.png" alt="Niladri Chatterjee" class="nav-logo-image">
+      </a>
+      <ul class="nav-links" role="list">
+        <li><a href="#hero" class="nav-link">Home</a></li>
+        <li><a href="#projects" class="nav-link">Projects</a></li>
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#skills" class="nav-link">Skills</a></li>
+        <li><a href="#experience" class="nav-link">Experience</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+      <a href="#contact" class="btn btn-sm magnetic" data-magnetic>Let's Talk</a>
+      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span>
+      </button>
+    </nav>
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+      <ul role="list">
+        <li><a href="#hero" class="mobile-link">Home</a></li>
+        <li><a href="#projects" class="mobile-link">Projects</a></li>
+        <li><a href="#about" class="mobile-link">About</a></li>
+        <li><a href="#skills" class="mobile-link">Skills</a></li>
+        <li><a href="#experience" class="mobile-link">Experience</a></li>
+        <li><a href="#contact" class="mobile-link">Contact</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main>
+
+
+
+    <!-- SOCIAL BAR -->
+    <div class="socialbar1">
+      <a href="https://www.facebook.com/share/1SHjLyLJpV/" class="antisocial facebook" target="_blank"><i
+          class="fab fa-facebook-f"></i></a>
+      <a href="#" class="antisocial instagram"><i class="fab fa-instagram"></i></a>
+      <a href="https://www.linkedin.com/in/niladri-chatterjee-3802003b0" class="antisocial linkedin" target="_blank"><i
+          class="fab fa-linkedin-in"></i></a>
+    </div>
+
+
+
+
+
+
+
+    <!-- ═══════════════════════════════════════════════════ -->
+    <!-- HERO                                                -->
+    <!-- ═══════════════════════════════════════════════════ -->
+    <section id="hero">
+      <div class="hero-grid-bg" aria-hidden="true"></div>
+      <div class="hero-noise" aria-hidden="true"></div>
+
+      <div class="container hero-inner">
+        <!-- Left -->
+        <div class="hero-left">
+          <div class="hero-tags">
+            <span class="tag-pill reveal-fade">Brand Identity Designer</span>
+            <span class="tag-pill reveal-fade">Packaging Designer</span>
+            <span class="tag-pill reveal-fade">Web Designer</span>
+          </div>
+
+          <h1 class="hero-headline">
+            <span class="split-line">Build Brands</span>
+            <span class="split-line accent-word">That People</span>
+            <span class="split-line">Remember.</span>
+          </h1>
+
+          <p class="hero-body reveal-fade">
+            Creating meaningful visual identities, packaging systems, websites, and digital experiences that help
+            businesses grow and leave lasting impressions.
+          </p>
+
+          <div class="hero-ctas reveal-fade">
+            <a href="#projects" class="btn btn-primary magnetic" data-magnetic>View Projects</a>
+            <a href="#" class="btn btn-ghost magnetic" data-magnetic download>Download CV</a>
+          </div>
+
+          <div class="hero-stats reveal-fade">
+            <div class="stat">
+              <span class="stat-num">20<span class="accent">+</span></span>
+              <span class="stat-label">Brands Created</span>
+            </div>
+            <div class="stat-divider" aria-hidden="true"></div>
+            <div class="stat">
+              <span class="stat-num">100<span class="accent">+</span></span>
+              <span class="stat-label">Designs Delivered</span>
+            </div>
+            <div class="stat-divider" aria-hidden="true"></div>
+            <div class="stat">
+              <span class="stat-num">4<span class="accent">+</span></span>
+              <span class="stat-label">Years Experience</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Floating Mockup Stack -->
+        <div class="hero-right" id="heroRight" aria-hidden="true">
+          <div class="mockup-stack">
+            <div class="mockup-card mockup-1">
+              <div class="mockup-inner"
+                style="background: linear-gradient(rgba(0, 0, 0, 0.007), rgba(0,0,0,.35)), url('/images/greensipmockuphero.webp') center center / cover no-repeat; background-size: cover; background-position: center; background-repeat: no-repeat;">
+                <!-- <div class="mock-logo">Greensip</div>
+                <div class="mock-tagline">Pure. Organic. Real.</div> -->
+                <div class="mock-shape-a"></div>
+              </div>
+            </div>
+            <div class="mockup-card mockup-2">
+              <div class="mockup-inner"
+                style="background: linear-gradient(rgba(0, 0, 0, 0.007), rgba(0,0,0,.35)), url('/images/theekamockuphero.webp') center center / cover no-repeat; background-size: cover; background-position: center; background-repeat: no-repeat;">
+                <!-- <div class="mock-logo">Greensip</div>
+                <div class="mock-tagline">Pure. Organic. Real.</div> -->
+                <div class="mock-shape-b"></div>
+              </div>
+            </div>
+            <div class="mockup-card mockup-3">
+              <div class="mockup-inner"
+                style="background: linear-gradient(rgba(0, 0, 0, 0.007), rgba(0,0,0,.35)), url('/images/shaanbazarmockuphero.png') center center / cover no-repeat; background-size: cover; background-position: center; background-repeat: no-repeat;">
+                <!-- <div class="mock-logo">Greensip</div>
+                <div class="mock-tagline">Pure. Organic. Real.</div> -->
+                <div class="mock-shape-c"></div>
+              </div>
+            </div>
+            <div class="mockup-card mockup-4">
+              <div class="mockup-inner"
+                style="background: linear-gradient(rgba(0, 0, 0, 0.007), rgba(0,0,0,.35)), url('/images/utsavmockuphero.png') center center / cover no-repeat; background-size: cover; background-position: center; background-repeat: no-repeat;">
+                <!-- <div class="mock-logo">Greensip</div>
+                <div class="mock-tagline">Pure. Organic. Real.</div> -->
+                <div class="mock-shape-d"></div>
+              </div>
+            </div>
+          </div>
+          <div class="hero-glow" aria-hidden="true"></div>
+        </div>
+      </div>
+
+      <!-- Scroll indicator -->
+      <div class="scroll-indicator reveal-fade" aria-label="Scroll down">
+        <span class="scroll-line"></span>
+        <span class="scroll-text">Scroll</span>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════ -->
+    <!-- MARQUEE                                             -->
+    <!-- ═══════════════════════════════════════════════════ -->
+    <div class="marquee-section">
+      <div class="marquee-track" id="marqueeTrack"></div>
+    </div>
+
+    <!-- ═══════════════════════════════════════════════════ -->
+    <!-- ABOUT                                               -->
+    <!-- ═══════════════════════════════════════════════════ -->
+    <section id="about" class="section">
+      <div class="container about-grid">
+        <!-- Left: Portrait area -->
+        <div class="about-portrait-wrap reveal-up">
+          <div class="about-portrait">
+            <div class="portrait-placeholder">
+              <img src="/images/prifiledp.png" alt="Portrait Placeholder" class="portrait-image">
+              <!-- <div class="portrait-monogram">NC</div>
+              <div class="portrait-bg-shape"></div> -->
+            </div>
+            <div class="about-badge">
+              <span class="badge-num accent">4+</span>
+              <span class="badge-txt">Years<br>Experience</span>
+            </div>
+          </div>
+          <div class="about-caption">Based in India</div>
+        </div>
+
+        <!-- Right: Story -->
+        <div class="about-story">
+          <div class="section-eyebrow reveal-fade">About Me</div>
+          <h2 class="section-headline reveal-up">
+            Design is how I<br>
+            <em>translate ideas</em><br>
+            into identity.
+          </h2>
+          <div class="about-body reveal-fade">
+            <p>I'm Niladri Chatterjee, a Brand Identity & Visual Designer from India. For over four years, I've been
+              helping businesses discover their visual voice — turning ambiguous ideas into clear, confident brands that
+              people trust and remember.</p>
+            <p>My work spans brand identity, packaging design, social media, and web design. I believe every brand has a
+              soul waiting to be expressed. My job is to find it, refine it, and bring it to life across every
+              touchpoint.</p>
+          </div>
+
+          <div class="about-expertise reveal-fade">
+            <div class="expertise-item"><span class="expertise-icon">◈</span> Brand Identity & Logo Design</div>
+            <div class="expertise-item"><span class="expertise-icon">◈</span> Packaging Design Systems</div>
+            <div class="expertise-item"><span class="expertise-icon">◈</span> Social Media Campaigns</div>
+            <div class="expertise-item"><span class="expertise-icon">◈</span> Web Design & UI</div>
+            <div class="expertise-item"><span class="expertise-icon">◈</span> Motion Graphics</div>
+          </div>
+
+          <a href="#contact" class="btn btn-primary magnetic reveal-fade" data-magnetic>Work With Me</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════ -->
+    <!-- FEATURED PROJECTS                                   -->
+    <!-- ═══════════════════════════════════════════════════ -->
+    <section id="projects" class="section">
+
+
+      <div class="demo-container">
+        <div class="demo-header">
+          <div class="demo-eyebrow">Selected Work</div>
+          <h1 class="demo-headline">Featured <em>Projects</em></h1>
+        </div>
+
+        <!-- ══════════════════════════════════════════════════════
+         PROJECT GRID
+         (this is the part that replaces your old #projects
+         section markup)
+    ═══════════════════════════════════════════════════════ -->
+
+        <div class="sw-grid">
+
+          <!-- Shaan Bazaar -->
+          <article class="sw-card sw-card--feature reveal-up cursor-project" data-cursor-label="View">
+            <div class="sw-card-media" data-project-id="shaan-bazaar">
+              <img src="/images/shaanbazzarBRAND.png" alt="Shaan Bazaar brand identity" class="sw-card-media-img"
+                width="800" height="500" loading="lazy">
+              <div class="sw-card-hint">
+                <span class="sw-card-hint-icon">＋</span>
+                <span class="sw-card-hint-label">View project</span>
+              </div>
+            </div>
+            <div class="sw-card-body">
+              <h3 class="sw-card-title">Shaan Bazaar</h3>
+              <div class="sw-card-meta">
+                <span class="sw-tag">Brand Identity</span>
+                <span class="sw-tag">Retail</span>
+                <span class="sw-year">2024</span>
+              </div>
+              <p class="sw-card-desc">A vibrant retail brand identity that bridges tradition with contemporary commerce
+                — bold,
+                trustworthy, and unmistakably Indian.</p>
+              <button type="button" class="sw-card-cta magnetic" data-magnetic data-open-project="shaan-bazaar">
+                View Project <span class="sw-card-cta-arrow">→</span>
+              </button>
+            </div>
+          </article>
+
+          <!-- Theeka -->
+          <article class="sw-card reveal-up cursor-project" data-cursor-label="View">
+            <div class="sw-card-media" data-project-id="theeka">
+              <img src="/images/theekha projectview.jpg" alt="Theeka packaging design" class="sw-card-media-img"
+                width="800" height="500" loading="lazy">
+              <div class="sw-card-hint">
+                <span class="sw-card-hint-icon">＋</span>
+                <span class="sw-card-hint-label">View project</span>
+              </div>
+            </div>
+            <div class="sw-card-body">
+              <h3 class="sw-card-title">Theeka</h3>
+              <div class="sw-card-meta">
+                <span class="sw-tag">Packaging</span>
+                <span class="sw-tag">FMCG</span>
+                <span class="sw-year">2024</span>
+              </div>
+              <p class="sw-card-desc">Packaging designed for a premium spice brand that channels warmth, heritage, and
+                shelf standout in equal measure.</p>
+              <button type="button" class="sw-card-cta magnetic" data-magnetic data-open-project="theeka">
+                View Project <span class="sw-card-cta-arrow">→</span>
+              </button>
+            </div>
+          </article>
+
+          <!-- FIT FUSHION -->
+          <article class="sw-card reveal-up cursor-project" data-cursor-label="View">
+            <div class="sw-card-media" data-project-id="fit-fushion">
+              <img src="/images/FITFUSHIONPROJECTVIEW.jpg" alt="FIT FUSHION brand identity" class="sw-card-media-img"
+                width="800" height="500" loading="lazy">
+              <div class="sw-card-hint">
+                <span class="sw-card-hint-icon">＋</span>
+                <span class="sw-card-hint-label">View project</span>
+              </div>
+            </div>
+            <div class="sw-card-body">
+              <h3 class="sw-card-title">FIT FUSHION</h3>
+              <div class="sw-card-meta">
+                <span class="sw-tag">Brand Identity</span>
+                <span class="sw-tag">Fitness</span>
+                <span class="sw-year">2024</span>
+              </div>
+              <p class="sw-card-desc">A dynamic fitness brand identity built to move with energy, clarity, and premium
+                athletic appeal.</p>
+              <button type="button" class="sw-card-cta magnetic" data-magnetic data-open-project="fit-fushion">
+                View Project <span class="sw-card-cta-arrow">→</span>
+              </button>
+            </div>
+          </article>
+
+          <!-- Greensip -->
+          <article class="sw-card reveal-up cursor-project" data-cursor-label="View">
+            <div class="sw-card-media" data-project-id="greensip">
+              <img src="/images/greensipproductview.png" alt="Greensip packaging" class="sw-card-media-img" width="800"
+                height="500" loading="lazy">
+              <div class="sw-card-hint">
+                <span class="sw-card-hint-icon">＋</span>
+                <span class="sw-card-hint-label">View project</span>
+              </div>
+            </div>
+            <div class="sw-card-body">
+              <h3 class="sw-card-title">Greensip</h3>
+              <div class="sw-card-meta">
+                <span class="sw-tag">Packaging</span>
+                <span class="sw-tag">FMCG</span>
+                <span class="sw-year">2023</span>
+              </div>
+              <p class="sw-card-desc">Fresh beverage packaging that communicates natural ingredients and healthy
+                refreshment with crisp visual clarity.</p>
+              <button type="button" class="sw-card-cta magnetic" data-magnetic data-open-project="greensip">
+                View Project <span class="sw-card-cta-arrow">→</span>
+              </button>
+            </div>
+          </article>
+
+          <!-- NO LIMITS -->
+          <article class="sw-card reveal-up cursor-project" data-cursor-label="View">
+            <div class="sw-card-media" data-project-id="nolimits">
+              <img src="/images/nolimitproject cover.png" alt="NO LIMITS sports footwear branding"
+                class="sw-card-media-img" width="800" height="500" loading="lazy">
+
+              <div class="sw-card-hint">
+                <span class="sw-card-hint-icon">＋</span>
+                <span class="sw-card-hint-label">View project</span>
+              </div>
+            </div>
+
+            <div class="sw-card-body">
+              <h3 class="sw-card-title">NO LIMITS</h3>
+
+              <div class="sw-card-meta">
+                <span class="sw-tag">Brand Identity</span>
+                <span class="sw-tag">Sports Footwear</span>
+                <span class="sw-year">2026</span>
+              </div>
+
+              <p class="sw-card-desc">
+               A modern sports footwear branding project focused on performance,
+  bold visuals, and impactful marketing.
+              </p>
+
+              <button type="button" class="sw-card-cta magnetic" data-magnetic data-open-project="nolimits">
+                View Project <span class="sw-card-cta-arrow">→</span>
+              </button>
+            </div>
+          </article>
+
+          <!-- Utsav Electronics -->
+          <article class="sw-card sw-card--feature reveal-up cursor-project" data-cursor-label="View">
+            <div class="sw-card-media" data-project-id="utsav-electronics">
+              <img src="/images/utsav projectview.png" alt="Utsav Electronics brand identity" class="sw-card-media-img"
+                width="800" height="500" loading="lazy">
+              <div class="sw-card-hint">
+                <span class="sw-card-hint-icon">＋</span>
+                <span class="sw-card-hint-label">View project</span>
+              </div>
+            </div>
+            <div class="sw-card-body">
+              <h3 class="sw-card-title">Utsav Electronics</h3>
+              <div class="sw-card-meta">
+                <span class="sw-tag">Brand Identity</span>
+                <span class="sw-tag">Retail</span>
+                <span class="sw-year">2022</span>
+              </div>
+              <p class="sw-card-desc">A modern electronics retail brand built for trust and scale — clean, confident,
+                and
+                engineered for growth across physical and digital spaces.</p>
+              <button type="button" class="sw-card-cta magnetic" data-magnetic data-open-project="utsav-electronics">
+                View Project <span class="sw-card-cta-arrow">→</span>
+              </button>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+
+
+
+
+
+
+
+
+
+    <!-- ═══════════════════════════════════════════════════ -->
+    <!-- SKILLS                                              -->
+    <!-- ═══════════════════════════════════════════════════ -->
+    <section id="skills" class="section">
+      <div class="container">
+        <div class="section-header reveal-fade">
+          <div class="section-eyebrow">Expertise</div>
+          <h2 class="section-headline reveal-up">What I<br><em>Bring</em></h2>
+        </div>
+
+        <div class="skills-grid">
+          <div class="skill-card reveal-up" data-tilt data-tilt-max="8" data-tilt-speed="400" data-tilt-glare
+            data-tilt-max-glare="0.1">
+            <div class="skill-icon">◈</div>
+            <h3 class="skill-name">Brand Identity</h3>
+            <p class="skill-desc">Logo design, visual systems, brand guidelines, and identity architecture.</p>
+          </div>
+          <div class="skill-card reveal-up" data-tilt data-tilt-max="8" data-tilt-speed="400">
+            <div class="skill-icon">⬡</div>
+            <h3 class="skill-name">Packaging Design</h3>
+            <p class="skill-desc">Structural concepts, label design, dieline creation, and print production.</p>
+          </div>
+          <div class="skill-card reveal-up" data-tilt data-tilt-max="8" data-tilt-speed="400">
+            <div class="skill-icon">⊞</div>
+            <h3 class="skill-name">UI & Web Design</h3>
+            <p class="skill-desc">Interface design, wireframing, prototyping, and frontend development.</p>
+          </div>
+          <div class="skill-card reveal-up" data-tilt data-tilt-max="8" data-tilt-speed="400">
+            <div class="skill-icon">◎</div>
+            <h3 class="skill-name">Social Media</h3>
+            <p class="skill-desc">Campaign design, content systems, templates, and visual storytelling.</p>
+          </div>
+          <div class="skill-card reveal-up" data-tilt data-tilt-max="8" data-tilt-speed="400">
+            <div class="skill-icon">▷</div>
+            <h3 class="skill-name">Motion Graphics</h3>
+            <p class="skill-desc">Animated logos, transitions, explainer videos, and reel creation.</p>
+          </div>
+          <div class="skill-card reveal-up" data-tilt data-tilt-max="8" data-tilt-speed="400">
+            <div class="skill-icon">✦</div>
+            <h3 class="skill-name">Visual Strategy</h3>
+            <p class="skill-desc">Brand research, competitor analysis, moodboarding, and creative direction.</p>
+          </div>
+        </div>
+
+        <!-- Tool badges -->
+        <div class="tools-row reveal-fade">
+          <div class="tool-badge">Figma</div>
+          <div class="tool-badge">Illustrator</div>
+          <div class="tool-badge">Photoshop</div>
+          <div class="tool-badge">After Effects</div>
+          <div class="tool-badge">CorelDRAW</div>
+          <div class="tool-badge">HTML</div>
+          <div class="tool-badge">CSS</div>
+          <div class="tool-badge">JavaScript</div>
+          <div class="tool-badge">React</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════ -->
+    <!-- EXPERIENCE TIMELINE                                 -->
+    <!-- ═══════════════════════════════════════════════════ -->
+    <section id="experience" class="section">
+      <div class="container">
+        <div class="section-header reveal-fade">
+          <div class="section-eyebrow">Journey</div>
+          <h2 class="section-headline reveal-up">Experience</h2>
+        </div>
+
+        <div class="timeline">
+          <div class="timeline-line" id="timelineLine" aria-hidden="true"></div>
+
+          <!-- Freelance -->
+          <div class="timeline-item reveal-up">
+            <div class="timeline-dot"></div>
+            <div class="timeline-date">2024 — Present</div>
+            <div class="timeline-content">
+              <h3 class="timeline-title">Freelance Graphic Designer</h3>
+              <p class="timeline-company">Self-Employed · Remote</p>
+              <p class="timeline-desc">
+                Working with startups, local businesses, and established brands to create
+                brand identities, social media campaigns, packaging designs, website visuals,
+                print materials, and marketing assets. Managing projects from concept to
+                final delivery while maintaining brand consistency and client satisfaction.
+              </p>
+              <div class="timeline-tags">
+                <span>Brand Identity</span>
+                <span>Logo Design</span>
+                <span>Social Media</span>
+                <span>Packaging</span>
+                <span>Print Design</span>
+                <span>Figma</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Sparking Ads -->
+          <div class="timeline-item reveal-up">
+            <div class="timeline-dot"></div>
+            <div class="timeline-date">2022 — 2024</div>
+            <div class="timeline-content">
+              <h3 class="timeline-title">Creative Lead</h3>
+              <p class="timeline-company">Sparking Ads Agency Pvt. Ltd.</p>
+              <p class="timeline-desc">
+                Led creative direction for advertising campaigns across multiple clients.
+                Designed promotional graphics, flex banners, branding materials, social media
+                creatives, and motion graphics while collaborating closely with marketing
+                teams to deliver impactful visual communication.
+              </p>
+              <div class="timeline-tags">
+                <span>Creative Direction</span>
+                <span>Advertising</span>
+                <span>Motion Graphics</span>
+                <span>Print Media</span>
+                <span>Branding</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- intern -->
+          <div class="timeline-item reveal-up">
+            <div class="timeline-dot"></div>
+            <div class="timeline-date">2021 — 2022</div>
+            <div class="timeline-content">
+              <h3 class="timeline-title">Graphic Design Intern</h3>
+              <p class="timeline-company">Ad Essence Services Pvt. Ltd.</p>
+              <p class="timeline-desc">
+                Completed a graphic design internship at a full-service advertising agency,
+                assisting the creative team in designing social media creatives, advertising
+                campaigns, print materials, branding assets, and promotional graphics. Gained
+                hands-on experience in commercial design, creative workflows, and client-focused
+                visual communication using Adobe Photoshop, Illustrator, and CorelDRAW.
+              </p>
+              <div class="timeline-tags">
+                <span>Graphic Design</span>
+                <span>Adobe Photoshop</span>
+                <span>Adobe Illustrator</span>
+                <span>CorelDRAW</span>
+                <span>Branding</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════ -->
+    <!-- TESTIMONIALS                                        -->
+    <!-- ═══════════════════════════════════════════════════ -->
+    <section id="testimonials" class="section">
+      <div class="container">
+
+        <div class="section-header reveal-fade">
+          <div class="section-eyebrow">Testimonials</div>
+          <h2 class="section-headline reveal-up">What Clients <em>Say</em></h2>
+        </div>
+
+        <div class="testimonial-slider">
+
+          <button class="slider-btn prev" id="tPrev" aria-label="Previous testimonial">
+            <span aria-hidden="true">&#10094;</span>
+          </button>
+
+          <div class="testimonial-wrapper" id="tWrapper" role="region" aria-roledescription="carousel"
+            aria-label="Client testimonials">
+
+            <div class="testimonial-track" id="testimonialsTrack">
+
+              <!-- Card 1 -->
+              <div class="testimonial-card" role="group" aria-roledescription="slide" aria-label="Testimonial 1 of 3">
+                <div class="review-top">
+                  <div class="stars">★★★★★</div>
+                  <span class="verified">✔ Verified Client</span>
+                </div>
+                <p class="quote">
+                  "Niladri transformed our brand identity beautifully.
+                  Every design reflected our vision perfectly and
+                  exceeded our expectations."
+                </p>
+                <div class="client">
+                  <img src="/images/shaan1testimonial.png" class="client-img" alt="">
+                  <div class="client-info">
+                    <h4>Santanu Dey</h4>
+                    <span>Founder</span>
+                  </div>
+                  <img src="/images/shaanLOGOTESTIMONIAL.jpg" class="company-logo" alt="">
+                </div>
+              </div>
+
+              <!-- Card 2 -->
+              <div class="testimonial-card" role="group" aria-roledescription="slide" aria-label="Testimonial 2 of 3">
+                <div class="review-top">
+                  <div class="stars">★★★★★</div>
+                  <span class="verified">✔ Verified Client</span>
+                </div>
+                <p class="quote">
+                  "Professional, creative and always on time.
+                  Our social media engagement increased after
+                  the new branding."
+                </p>
+                <div class="client">
+                  <img src="/images/UTSAV2TESTIMONIAL.png" class="client-img" alt="">
+                  <div class="client-info">
+                    <h4>Goutam Saha</h4>
+                    <span>Proprietor</span>
+                  </div>
+                  <img src="/images/UTSAVLOGOTESTIMONIAL.png" class="company-logo" alt="">
+                </div>
+              </div>
+
+              <!-- Card 3 -->
+              <div class="testimonial-card" role="group" aria-roledescription="slide" aria-label="Testimonial 3 of 3">
+                <div class="review-top">
+                  <div class="stars">★★★★★</div>
+                  <span class="verified">✔ Verified Client</span>
+                </div>
+                <p class="quote">
+                  "Working with Niladri was smooth from start to finish.
+                  Outstanding creativity and attention to detail."
+                </p>
+                <div class="client">
+                  <img src="/images/vsteel3TESTIMONIAL.png" class="client-img" alt="">
+                  <div class="client-info">
+                    <h4>Surajit saha</h4>
+                    <span>Owner</span>
+                  </div>
+                  <img src="/images/vsteel logo.png" class="company-logo" alt="">
+                </div>
+              </div>
+
+
+              <!-- Card 4 -->
+              <div class="testimonial-card" role="group" aria-roledescription="slide" aria-label="Testimonial 4 of 4">
+                <div class="review-top">
+                  <div class="stars">★★★★★</div>
+                  <span class="verified">✔ Verified Client</span>
+                </div>
+                <p class="quote">
+                  "Working with Niladri was smooth from start to finish.
+                  Outstanding creativity and attention to detail."
+                </p>
+                <div class="client">
+                  <img src="/images/tamo4TESTIMONIAL.png" class="client-img" alt="">
+                  <div class="client-info">
+                    <h4>James Barnard</h4>
+                    <span>Owner</span>
+                  </div>
+                  <img src="/images/tamologo logo.png" class="company-logo" alt="">
+                </div>
+              </div>
+
+
+
+
+
+
+            </div>
+          </div>
+
+          <button class="slider-btn next" id="tNext" aria-label="Next testimonial">
+            <span aria-hidden="true">&#10095;</span>
+          </button>
+
+        </div>
+
+        <div class="dots" id="tDots"></div>
+
+        <!-- <div class="autoplay-bar"><div class="autoplay-bar-fill" id="tProgress"></div></div> -->
+
+      </div>
+    </section>
+    <!-- ═══════════════════════════════════════════════════ -->
+    <!-- CONTACT                                             -->
+    <!-- ═══════════════════════════════════════════════════ -->
+    <section id="contact" class="section">
+      <div class="container">
+        <div class="contact-inner">
+          <div class="contact-left reveal-up">
+            <div class="section-eyebrow">Get In Touch</div>
+            <h2 class="contact-headline">
+              Let's Build<br>
+              Something<br>
+              <em class="accent-italic">Amazing.</em>
+            </h2>
+            <p class="contact-sub reveal-fade">Have a project in mind? I'd love to hear about it. Let's create something
+              remarkable together.</p>
+
+            <div class="contact-links reveal-fade">
+              <a href="mailto:niladrichatterjee81@gmail.com" class="contact-link magnetic" data-magnetic>
+                <span class="cl-icon">✉</span>
+                <div>
+                  <div class="cl-label">Email</div>
+                  <div class="cl-val">niladrichatterjee81@gmail.com</div>
+                </div>
+              </a>
+              <a href="https://wa.me/+919679648166" class="contact-link magnetic" data-magnetic target="_blank"
+                rel="noopener">
+                <span class="cl-icon">◎</span>
+                <div>
+                  <div class="cl-label">WhatsApp</div>
+                  <div class="cl-val">Message me directly</div>
+                </div>
+              </a>
+              <a href="https://www.linkedin.com/in/niladri-chatterjee-3802003b0" class="contact-link magnetic"
+                data-magnetic target="_blank" rel="noopener">
+                <span class="cl-icon">◈</span>
+                <div>
+                  <div class="cl-label">LinkedIn</div>
+                  <div class="cl-val">Connect professionally</div>
+                </div>
+              </a>
+              <a href="https://www.behance.net/soulcode1" class="contact-link magnetic" data-magnetic target="_blank"
+                rel="noopener">
+                <span class="cl-icon">⬡</span>
+                <div>
+                  <div class="cl-label">Behance</div>
+                  <div class="cl-val">View full portfolio</div>
+                </div>
+              </a>
+            </div>
+          </div>
+
+          <!-- Contact Form -->
+          <div class="contact-form-wrap reveal-up">
+            <div class="contact-form">
+              <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" placeholder="Your name" autocomplete="name" />
+              </div>
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="your@email.com" autocomplete="email" />
+              </div>
+              <div class="form-group">
+                <label for="project">Project Type</label>
+                <select id="project" name="project">
+                  <option value="">Select a service</option>
+                  <option>Brand Identity</option>
+                  <option>Packaging Design</option>
+                  <option>Web Design</option>
+                  <option>Social Media Design</option>
+                  <option>Motion Graphics</option>
+                  <option>Other</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" rows="4" placeholder="Tell me about your project..."></textarea>
+              </div>
+              <button type="button" class="btn btn-primary btn-full magnetic" id="formSubmit" data-magnetic>Send
+                Message</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ═══════════════════════════════════════════════════ -->
+  <!-- FOOTER                                              -->
+  <!-- ═══════════════════════════════════════════════════ -->
+  <footer>
+    <div class="footer-divider" aria-hidden="true"></div>
+    <div class="container footer-inner">
+      <div class="footer-left">
+        <div class="footer-logo">NC<span class="accent-dot">.</span></div>
+        <p class="footer-tagline">Building brands that people remember.</p>
+      </div>
+      <div class="footer-links">
+        <a href="#hero">Home</a>
+        <a href="#projects">Projects</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </div>
+
+
+      <div class="footer-right">
+        <span class="footer-label">Connect</span>
+
+        <div class="footer-socials">
+          <a href="https://wa.me/919679648166" target="_blank" class="social-btn whatsapp">
+            <i class="fab fa-whatsapp"></i>
+          </a>
+
+          <a href="https://www.linkedin.com/in/niladri-chatterjee-3802003b0" target="_blank"
+            class="social-btn linkedin">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+
+          <a href="#" class="social-btn instagram">
+            <i class="fab fa-instagram"></i>
+          </a>
+
+          <a href="https://www.facebook.com/share/1SHjLyLJpV/" target="_blank" class="social-btn facebook">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="container footer-bottom">
+      <span>© 2025 Niladri Chatterjee. All rights reserved.</span>
+      <button class="back-to-top magnetic" id="backToTop" aria-label="Back to top" data-magnetic>↑ Top</button>
+    </div>
+  </footer>
+
+
+
+
+
+
+  <!-- ══════════════════════════════════════════════════════
+         LIGHTBOX — one shared modal, content swapped per project.
+         Place this once, anywhere near the end of <body>.
+    ═══════════════════════════════════════════════════════ -->
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <div class="lightbox-backdrop" data-lightbox-dismiss></div>
+
+    <div class="lightbox-panel" role="dialog" aria-modal="true" aria-labelledby="lightboxTitle">
+      <header class="lightbox-head">
+        <div>
+          <span class="lightbox-eyebrow" id="lightboxYear"></span>
+          <h3 class="lightbox-title" id="lightboxTitle"></h3>
+        </div>
+        <button type="button" class="lightbox-close" data-lightbox-dismiss aria-label="Close gallery">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </header>
+
+      <div class="lightbox-stage">
+        <button type="button" class="lightbox-nav" data-lightbox-prev aria-label="Previous image">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="15 18 9 12 15 6"></polyline>
+          </svg>
+        </button>
+
+        <div class="lightbox-viewport" id="lightboxViewport">
+          <div class="lightbox-track" id="lightboxTrack"></div>
+        </div>
+
+        <button type="button" class="lightbox-nav" data-lightbox-next aria-label="Next image">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="9 18 15 12 9 6"></polyline>
+          </svg>
+        </button>
+      </div>
+
+      <footer class="lightbox-foot">
+        <div class="lightbox-tags" id="lightboxTags"></div>
+
+        <div class="lightbox-project-info">
+          <h3>Project Overview</h3>
+          <p id="lightboxProjectDescription">
+            <!-- JS will insert the project description here -->
+          </p>
+        </div>
+
+        <div class="lightbox-dots" id="lightboxDots"></div>
+        <div class="lightbox-count" id="lightboxCount"></div>
+      </footer>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <script src="/script.js" defer></script>
+</body>
+
+</html>
