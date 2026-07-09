@@ -1,0 +1,1835 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Niladri Chatterjee — Brand Identity & Visual Designer from India. Creating meaningful visual identities, packaging systems, and digital experiences." />
+  <meta property="og:title" content="Niladri Chatterjee — Brand Identity Designer" />
+  <meta property="og:description" content="Creating meaningful visual identities, packaging systems, websites, and digital experiences that help businesses grow." />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <title>Niladri Chatterjee — Brand Identity & Visual Designer</title>
+
+  <!-- Google Fonts: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <!-- Fontshare: Clash Display + Satoshi -->
+  <link href="https://api.fontshare.com/v2/css?f[]=clash-display@700,600,500&f[]=satoshi@700,500,400&display=swap" rel="stylesheet" />
+
+  <!-- GSAP -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+  <!-- Lenis Smooth Scroll -->
+  <script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+
+  <!-- VanillaTilt -->
+  <script src="https://unpkg.com/vanilla-tilt@1.8.1/dist/vanilla-tilt.min.js"></script>
+
+  <style>
+/* ═══════════════════════════════════════════════════════
+   NILADRI CHATTERJEE — Portfolio CSS
+   Brand Identity & Visual Designer
+═══════════════════════════════════════════════════════ */
+
+/* ── CSS CUSTOM PROPERTIES ─────────────────────────── */
+:root {
+  --bg:          #0D0D0D;
+  --bg-card:     #181818;
+  --bg-card-2:   #141414;
+  --text:        #FFFFFF;
+  --text-sec:    #8F8F8F;
+  --accent:      #00C16A;
+  --accent-dim:  rgba(0,193,106,0.12);
+  --border:      rgba(255,255,255,0.08);
+  --border-hover:rgba(255,255,255,0.18);
+
+  --font-body:   'Inter', system-ui, sans-serif;
+  /* Clash Display via CDN fallback to system */
+  --font-display:'Clash Display', 'Satoshi', 'Inter', sans-serif;
+
+  --ease-out:    cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out: cubic-bezier(0.87, 0, 0.13, 1);
+
+  --nav-h: 72px;
+  --container: 1280px;
+  --gutter: clamp(1.25rem, 5vw, 4rem);
+}
+
+/* ── RESET ──────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  font-weight: 400;
+  line-height: 1.6;
+  overflow-x: hidden;
+  cursor: none;
+}
+
+a { color: inherit; text-decoration: none; }
+ul { list-style: none; }
+img { display: block; width: 100%; height: auto; object-fit: cover; }
+input, select, textarea, button { font-family: inherit; font-size: inherit; }
+button { cursor: none; border: none; background: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+}
+
+/* ── LAYOUT ─────────────────────────────────────────── */
+.container {
+  max-width: var(--container);
+  margin: 0 auto;
+  padding-left: var(--gutter);
+  padding-right: var(--gutter);
+}
+.section { padding-top: clamp(5rem, 10vw, 9rem); padding-bottom: clamp(5rem, 10vw, 9rem); }
+
+/* ── TYPOGRAPHY ─────────────────────────────────────── */
+@import url('https://api.fontshare.com/v2/css?f[]=clash-display@400,500,600,700&display=swap');
+@import url('https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&display=swap');
+
+.section-eyebrow {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 1rem;
+}
+
+.section-headline {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  font-weight: 700;
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+}
+.section-headline em { font-style: italic; color: var(--accent); }
+.section-sub { color: var(--text-sec); margin-top: 1rem; font-size: 1.05rem; }
+
+.section-header { margin-bottom: clamp(3rem, 6vw, 5rem); }
+
+.accent { color: var(--accent); }
+.accent-dot { color: var(--accent); }
+.accent-italic { font-style: italic; color: var(--accent); }
+
+/* ── LOADER ─────────────────────────────────────────── */
+#loader {
+  position: fixed; inset: 0; z-index: 9999;
+  background: #000;
+  display: flex; align-items: center; justify-content: center;
+}
+.loader-inner {
+  text-align: center;
+  display: flex; flex-direction: column; align-items: center; gap: 2rem;
+}
+.loader-logo {
+  font-family: var(--font-display);
+  font-size: 4rem;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1;
+}
+.loader-logo-n { color: var(--text); }
+.loader-logo-c { color: var(--accent); }
+.loader-bar-wrap {
+  width: 200px; height: 1px; background: var(--border);
+  position: relative; overflow: hidden;
+}
+.loader-bar {
+  position: absolute; left: 0; top: 0;
+  height: 100%; width: 0; background: var(--accent);
+  transition: width 0.05s linear;
+}
+.loader-percent {
+  font-size: 0.75rem; letter-spacing: 0.15em;
+  color: var(--text-sec);
+  font-variant-numeric: tabular-nums;
+}
+
+/* ── CUSTOM CURSOR ───────────────────────────────────── */
+#cursor { position: fixed; top: 0; left: 0; z-index: 9998; pointer-events: none; }
+.cursor-dot {
+  position: absolute;
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: var(--text);
+  transform: translate(-50%, -50%);
+  transition: transform 0.1s var(--ease-out), background 0.2s;
+}
+.cursor-ring {
+  position: absolute;
+  width: 36px; height: 36px;
+  border-radius: 50%;
+  border: 1px solid rgba(255,255,255,0.4);
+  transform: translate(-50%, -50%);
+  transition: width 0.35s var(--ease-out), height 0.35s var(--ease-out),
+              border-color 0.3s, background 0.3s;
+}
+.cursor-label {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  font-size: 0.6rem; font-weight: 600; letter-spacing: 0.12em;
+  text-transform: uppercase; color: #000;
+  opacity: 0; transition: opacity 0.25s;
+  white-space: nowrap; pointer-events: none;
+}
+#cursor.cursor-project .cursor-ring {
+  width: 88px; height: 88px;
+  background: var(--accent);
+  border-color: var(--accent);
+}
+#cursor.cursor-project .cursor-dot { opacity: 0; }
+#cursor.cursor-project .cursor-label { opacity: 1; font-size: 0.65rem; }
+
+/* ── NAVIGATION ─────────────────────────────────────── */
+#nav {
+  position: fixed; top: 0; left: 0; right: 0;
+  z-index: 1000; height: var(--nav-h);
+  transition: background 0.4s, backdrop-filter 0.4s, border-color 0.4s;
+}
+#nav.scrolled {
+  background: rgba(13,13,13,0.8);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border);
+}
+.nav-inner {
+  height: 100%; display: flex; align-items: center;
+  justify-content: space-between; gap: 2rem;
+}
+.nav-logo {
+  font-family: var(--font-display);
+  font-size: 1.4rem; font-weight: 700;
+  letter-spacing: -0.02em;
+}
+.nav-links {
+  display: flex; align-items: center; gap: 2.5rem;
+}
+.nav-link {
+  font-size: 0.85rem; font-weight: 500; color: var(--text-sec);
+  transition: color 0.2s; letter-spacing: 0.01em;
+}
+.nav-link:hover { color: var(--text); }
+
+.nav-toggle {
+  display: none; flex-direction: column; gap: 5px;
+  padding: 0.5rem; background: none; border: none;
+}
+.nav-toggle span {
+  width: 22px; height: 1.5px; background: var(--text);
+  display: block; transition: transform 0.3s, opacity 0.3s;
+}
+
+/* Mobile Menu */
+.mobile-menu {
+  position: fixed; inset: 0; z-index: 999;
+  background: var(--bg);
+  display: flex; align-items: center; justify-content: center;
+  clip-path: circle(0% at calc(100% - 3rem) calc(var(--nav-h)/2));
+  transition: clip-path 0.7s var(--ease-out);
+  pointer-events: none;
+}
+.mobile-menu.open {
+  clip-path: circle(150% at calc(100% - 3rem) calc(var(--nav-h)/2));
+  pointer-events: auto;
+}
+.mobile-menu ul { text-align: center; }
+.mobile-link {
+  display: block; padding: 0.75rem 0;
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 7vw, 3.5rem);
+  font-weight: 700; letter-spacing: -0.02em;
+  color: var(--text-sec); transition: color 0.2s;
+}
+.mobile-link:hover { color: var(--accent); }
+
+/* ── BUTTONS ─────────────────────────────────────────── */
+.btn {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  padding: 0.85rem 1.75rem; border-radius: 100px;
+  font-size: 0.85rem; font-weight: 600; letter-spacing: 0.02em;
+  transition: transform 0.3s var(--ease-out), box-shadow 0.3s, background 0.2s;
+  position: relative; overflow: hidden;
+}
+.btn:hover { transform: translateY(-2px); }
+.btn-primary {
+  background: var(--accent); color: #000;
+  box-shadow: 0 0 0 0 rgba(0,193,106,0.3);
+}
+.btn-primary:hover { box-shadow: 0 8px 32px rgba(0,193,106,0.3); }
+.btn-ghost {
+  background: transparent; color: var(--text);
+  border: 1px solid var(--border);
+}
+.btn-ghost:hover { border-color: var(--border-hover); }
+.btn-sm { padding: 0.6rem 1.2rem; font-size: 0.8rem; }
+.btn-full { width: 100%; justify-content: center; }
+
+/* ── HERO ────────────────────────────────────────────── */
+#hero {
+  min-height: 100vh;
+  padding-top: var(--nav-h);
+  display: flex; flex-direction: column; justify-content: center;
+  position: relative; overflow: hidden;
+}
+
+/* Animated grid background */
+.hero-grid-bg {
+  position: absolute; inset: 0; z-index: 0;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+  background-size: 60px 60px;
+  mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 40%, transparent 100%);
+}
+
+.hero-noise {
+  position: absolute; inset: 0; z-index: 0; opacity: 0.025;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-repeat: repeat; background-size: 180px 180px;
+  pointer-events: none;
+}
+
+.hero-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center; gap: 4rem;
+  padding-top: clamp(3rem, 6vw, 5rem);
+  padding-bottom: clamp(3rem, 6vw, 5rem);
+  position: relative; z-index: 1;
+}
+
+.hero-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 2rem; }
+.tag-pill {
+  font-size: 0.7rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase;
+  padding: 0.35rem 0.9rem; border-radius: 100px;
+  border: 1px solid var(--border); color: var(--text-sec);
+}
+
+.hero-headline {
+  font-family: var(--font-display);
+  font-size: clamp(2.8rem, 5.5vw, 5.5rem);
+  font-weight: 700; line-height: 1.04; letter-spacing: -0.03em;
+  margin-bottom: 1.5rem;
+}
+.hero-headline .split-line { display: block; }
+.accent-word { color: var(--accent); }
+
+.hero-body {
+  font-size: clamp(1rem, 1.4vw, 1.15rem);
+  color: var(--text-sec); line-height: 1.7;
+  max-width: 48ch; margin-bottom: 2.5rem;
+}
+
+.hero-ctas { display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 3rem; }
+
+.hero-stats {
+  display: flex; align-items: center; gap: 1.5rem; flex-wrap: wrap;
+}
+.stat { display: flex; flex-direction: column; }
+.stat-num {
+  font-family: var(--font-display);
+  font-size: 1.8rem; font-weight: 700; letter-spacing: -0.03em;
+}
+.stat-label { font-size: 0.72rem; color: var(--text-sec); letter-spacing: 0.04em; margin-top: 0.1rem; }
+.stat-divider { width: 1px; height: 2.5rem; background: var(--border); }
+
+/* Hero Right: Mockup Stack */
+.hero-right { position: relative; height: 520px; }
+.hero-glow {
+  position: absolute; top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: 340px; height: 340px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(0,193,106,0.18) 0%, transparent 70%);
+  pointer-events: none; filter: blur(40px);
+}
+
+.mockup-stack { position: relative; width: 100%; height: 100%; }
+.mockup-card {
+  position: absolute; border-radius: 16px;
+  border: 1px solid var(--border); overflow: hidden;
+  box-shadow: 0 24px 80px rgba(0,0,0,0.6);
+  transition: transform 0.1s linear;
+}
+.mockup-inner {
+  width: 100%; height: 100%;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  gap: 0.5rem; padding: 1.5rem;
+  position: relative; overflow: hidden;
+}
+.mock-logo {
+  font-family: var(--font-display);
+  font-size: 1.5rem; font-weight: 700;
+  letter-spacing: -0.02em; color: #fff; z-index: 1;
+}
+.mock-tagline {
+  font-size: 0.65rem; letter-spacing: 0.18em; text-transform: uppercase;
+  color: rgba(255,255,255,0.5); z-index: 1;
+}
+.mock-shape, .mock-shape-b, .mock-shape-c, .mock-shape-d {
+  position: absolute; border-radius: 50%;
+  opacity: 0.25;
+}
+.mock-shape { width: 120px; height: 120px; background: var(--accent); right: -30px; bottom: -30px; }
+.mock-shape-b { width: 90px; height: 90px; background: #ff6b00; left: -20px; top: -20px; }
+.mock-shape-c { width: 100px; height: 100px; background: #6b00ff; right: -20px; top: -20px; }
+.mock-shape-d { width: 140px; height: 140px; background: #c0a060; left: -40px; bottom: -40px; }
+
+.mockup-1 { width: 240px; height: 140px; top: 20px; right: 20px; }
+.mockup-2 { width: 200px; height: 130px; top: 150px; left: 0; }
+.mockup-3 { width: 220px; height: 140px; top: 240px; right: 30px; }
+.mockup-4 { width: 200px; height: 120px; bottom: 20px; left: 30px; }
+
+/* Scroll indicator */
+.scroll-indicator {
+  position: absolute; bottom: 2rem; left: 50%;
+  transform: translateX(-50%);
+  display: flex; flex-direction: column; align-items: center; gap: 0.75rem;
+  z-index: 1;
+}
+.scroll-line {
+  width: 1px; height: 50px; background: linear-gradient(to bottom, var(--accent), transparent);
+  animation: scrollLine 2s ease-in-out infinite;
+}
+@keyframes scrollLine { 0%,100% { opacity: 0.3; } 50% { opacity: 1; } }
+.scroll-text { font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--text-sec); }
+
+/* ── MARQUEE ─────────────────────────────────────────── */
+.marquee-section {
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  padding: 1rem 0; overflow: hidden;
+  background: var(--bg-card-2);
+}
+.marquee-track {
+  display: flex; align-items: center; gap: 2.5rem;
+  width: max-content;
+  animation: marquee 100s linear infinite;
+}
+.marquee-track span {
+  font-size: 0.75rem; font-weight: 600; letter-spacing: 0.12em;
+  text-transform: uppercase; color: var(--text-sec); white-space: nowrap;
+}
+.marquee-dot { color: var(--accent) !important; }
+@keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+.marquee-section:hover .marquee-track { animation-play-state: paused; }
+
+/* ── ABOUT ───────────────────────────────────────────── */
+.about-grid {
+  display: grid; grid-template-columns: 1fr 1.5fr;
+  gap: clamp(3rem, 6vw, 6rem); align-items: center;
+}
+
+.about-portrait-wrap { position: relative; }
+.about-portrait {
+  position: relative; border-radius: 20px; overflow: visible;
+}
+.portrait-placeholder {
+  width: 100%; aspect-ratio: 3/4; max-width: 360px;
+  background: var(--bg-card); border-radius: 20px;
+  border: 1px solid var(--border);
+  display: flex; align-items: center; justify-content: center;
+  position: relative; overflow: hidden;
+}
+.portrait-monogram {
+  font-family: var(--font-display);
+  font-size: clamp(4rem, 8vw, 7rem); font-weight: 700;
+  color: var(--border); letter-spacing: -0.03em; z-index: 1;
+}
+.portrait-bg-shape {
+  position: absolute; width: 300px; height: 300px; border-radius: 50%;
+  background: radial-gradient(circle, var(--accent-dim) 0%, transparent 70%);
+  bottom: -80px; right: -80px;
+}
+.about-badge {
+  position: absolute; bottom: -1.5rem; right: -1.5rem;
+  background: var(--accent); border-radius: 14px;
+  padding: 1rem 1.25rem; text-align: center;
+  box-shadow: 0 12px 40px rgba(0,193,106,0.3);
+}
+.badge-num {
+  display: block; font-family: var(--font-display);
+  font-size: 2.2rem; font-weight: 700; color: #000; line-height: 1;
+}
+.badge-txt { font-size: 0.65rem; font-weight: 600; color: rgba(0,0,0,0.7); letter-spacing: 0.05em; }
+.about-caption { font-size: 0.72rem; color: var(--text-sec); letter-spacing: 0.1em; text-transform: uppercase; margin-top: 1rem; }
+
+.about-story .section-headline { margin-bottom: 1.5rem; }
+.about-body p { color: var(--text-sec); margin-bottom: 1rem; line-height: 1.75; }
+.about-expertise { display: flex; flex-direction: column; gap: 0.6rem; margin: 2rem 0; }
+.expertise-item {
+  display: flex; align-items: center; gap: 0.75rem;
+  font-size: 0.9rem; color: var(--text-sec);
+}
+.expertise-icon { color: var(--accent); font-size: 0.85rem; }
+
+/* ── PROJECTS ────────────────────────────────────────── */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  /* Alternating wide cards */
+  grid-template-areas:
+    "wide1 wide1"
+    "card1 card2"
+    "card3 card4"
+    "wide2 wide2";
+}
+.project-card:nth-child(1) { grid-area: wide1; }
+.project-card:nth-child(2) { grid-area: card1; }
+.project-card:nth-child(3) { grid-area: card2; }
+.project-card:nth-child(4) { grid-area: card3; }
+.project-card:nth-child(5) { grid-area: card4; }
+.project-card:nth-child(6) { grid-area: wide2; }
+
+.project-card {
+  background: var(--bg-card); border-radius: 20px;
+  border: 1px solid var(--border); overflow: hidden;
+  transition: transform 0.4s var(--ease-out), border-color 0.3s;
+  display: grid;
+}
+.project-card--wide {
+  grid-template-columns: 1.2fr 1fr;
+}
+.project-card:not(.project-card--wide) {
+  grid-template-rows: 240px auto;
+}
+.project-card:hover { transform: translateY(-6px); border-color: var(--border-hover); }
+
+.project-img { position: relative; overflow: hidden; }
+.project-color-block {
+  width: 100%; height: 100%; min-height: 240px;
+  background: linear-gradient(135deg, var(--proj-color-2) 0%, color-mix(in srgb, var(--proj-color) 15%, var(--proj-color-2)) 100%);
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  gap: 0.5rem; padding: 2rem;
+  position: relative; overflow: hidden;
+  transition: transform 0.6s var(--ease-out);
+}
+.project-card:hover .project-color-block { transform: scale(1.03); }
+.proj-brand-name {
+  font-family: var(--font-display);
+  font-size: 2rem; font-weight: 700;
+  color: #fff; z-index: 1;
+  letter-spacing: -0.02em;
+}
+.proj-tagline { font-size: 0.65rem; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(255,255,255,0.45); z-index: 1; }
+
+.proj-shapes { position: absolute; inset: 0; pointer-events: none; }
+.ps { position: absolute; }
+.ps-circle { width: 160px; height: 160px; border-radius: 50%; border: 2px solid rgba(255,255,255,0.08); right: -40px; bottom: -40px; }
+.ps-rect { width: 80px; height: 80px; border: 2px solid rgba(255,255,255,0.06); left: 20px; top: 20px; transform: rotate(30deg); }
+.ps-tri { width: 0; height: 0; border-left: 50px solid transparent; border-right: 50px solid transparent; border-bottom: 86px solid rgba(255,255,255,0.05); bottom: 20px; right: 20px; }
+.ps-circle-sm { width: 60px; height: 60px; border-radius: 50%; background: rgba(255,255,255,0.06); top: 20px; right: 40px; }
+.ps-circle-sm-2 { width: 40px; height: 40px; border-radius: 50%; background: rgba(255,255,255,0.04); bottom: 30px; left: 30px; }
+.ps-leaf { width: 70px; height: 70px; border-radius: 0 50% 0 50%; background: rgba(255,255,255,0.05); bottom: 20px; right: 20px; transform: rotate(45deg); }
+.ps-moon { width: 60px; height: 60px; border-radius: 50%; box-shadow: inset -15px 0 0 rgba(255,255,255,0.08); top: 25px; right: 25px; }
+.ps-bolt {
+  width: 0; border-left: 20px solid transparent; border-right: 20px solid transparent;
+  position: absolute;
+  border-bottom: none;
+}
+/* Simple bolt via text */
+.ps-bolt::after { content: "⚡"; font-size: 4rem; opacity: 0.08; position: absolute; top: 50%; right: 20px; transform: translateY(-50%); }
+
+.project-info { padding: 2rem; display: flex; flex-direction: column; justify-content: center; gap: 0.75rem; }
+.project-title {
+  font-family: var(--font-display);
+  font-size: 1.6rem; font-weight: 700; letter-spacing: -0.02em;
+}
+.project-meta { display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap; }
+.project-tag {
+  font-size: 0.65rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase;
+  padding: 0.3rem 0.75rem; border-radius: 100px;
+  border: 1px solid var(--border); color: var(--text-sec);
+}
+.project-year { font-size: 0.72rem; color: var(--text-sec); margin-left: auto; }
+.project-desc { font-size: 0.88rem; color: var(--text-sec); line-height: 1.7; }
+.project-link {
+  display: inline-flex; align-items: center; gap: 0.4rem;
+  font-size: 0.82rem; font-weight: 600; color: var(--accent);
+  margin-top: 0.5rem; width: fit-content;
+  transition: gap 0.2s;
+}
+.project-link:hover { gap: 0.75rem; }
+
+/* ── SKILLS ──────────────────────────────────────────── */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem; margin-bottom: 2.5rem;
+}
+.skill-card {
+  background: var(--bg-card); border-radius: 16px;
+  border: 1px solid var(--border); padding: 2rem;
+  transition: border-color 0.3s, transform 0.3s;
+  transform-style: preserve-3d;
+}
+.skill-card:hover { border-color: var(--border-hover); }
+.skill-icon {
+  font-size: 1.6rem; margin-bottom: 1.25rem;
+  color: var(--accent); display: block;
+}
+.skill-name {
+  font-family: var(--font-display);
+  font-size: 1.05rem; font-weight: 700; margin-bottom: 0.6rem;
+}
+.skill-desc { font-size: 0.82rem; color: var(--text-sec); line-height: 1.65; }
+
+.tools-row { display: flex; flex-wrap: wrap; gap: 0.75rem; }
+.tool-badge {
+  font-size: 0.72rem; font-weight: 600; letter-spacing: 0.08em;
+  padding: 0.4rem 1rem; border-radius: 100px;
+  border: 1px solid var(--border); color: var(--text-sec);
+  transition: border-color 0.2s, color 0.2s;
+}
+.tool-badge:hover { border-color: var(--accent); color: var(--accent); }
+
+/* ── TIMELINE ────────────────────────────────────────── */
+.timeline { position: relative; padding-left: 2rem; }
+.timeline-line {
+  position: absolute; left: 0; top: 8px; width: 1px;
+  background: var(--border); height: 0;
+  transition: height 1s ease-out;
+}
+
+.timeline-item {
+  position: relative; padding-bottom: 3.5rem; padding-left: 2rem;
+}
+.timeline-item:last-child { padding-bottom: 0; }
+.timeline-dot {
+  position: absolute; left: -2.375rem; top: 0.25rem;
+  width: 10px; height: 10px; border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 0 3px rgba(0,193,106,0.2);
+}
+.timeline-date {
+  font-size: 0.72rem; font-weight: 600; letter-spacing: 0.1em;
+  text-transform: uppercase; color: var(--accent); margin-bottom: 0.75rem;
+}
+.timeline-title {
+  font-family: var(--font-display);
+  font-size: 1.4rem; font-weight: 700; letter-spacing: -0.02em;
+  margin-bottom: 0.2rem;
+}
+.timeline-company { font-size: 0.82rem; color: var(--text-sec); margin-bottom: 0.75rem; }
+.timeline-desc { font-size: 0.88rem; color: var(--text-sec); line-height: 1.7; margin-bottom: 1rem; }
+.timeline-tags { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+.timeline-tags span {
+  font-size: 0.65rem; font-weight: 600; letter-spacing: 0.08em;
+  padding: 0.3rem 0.75rem; border-radius: 100px;
+  border: 1px solid var(--border); color: var(--text-sec);
+}
+
+/* ── TESTIMONIALS ────────────────────────────────────── */
+.testimonials-slider { position: relative; overflow: hidden; }
+.testimonials-track {
+  display: flex; gap: 1.5rem;
+  transition: transform 0.6s var(--ease-out);
+}
+.testimonial-card {
+  min-width: calc(50% - 0.75rem);
+  background: var(--bg-card); border-radius: 20px;
+  border: 1px solid var(--border); padding: 2.5rem;
+  backdrop-filter: blur(4px);
+  flex-shrink: 0;
+}
+.t-stars { color: var(--accent); font-size: 0.9rem; letter-spacing: 0.1em; margin-bottom: 1.25rem; }
+.t-quote {
+  font-size: 1.05rem; line-height: 1.7; color: var(--text);
+  margin-bottom: 2rem; font-style: italic;
+}
+.t-author { display: flex; align-items: center; gap: 1rem; }
+.t-avatar {
+  width: 44px; height: 44px; border-radius: 50%;
+  background: var(--accent-dim); border: 1px solid var(--border);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 0.7rem; font-weight: 700; color: var(--accent);
+  flex-shrink: 0;
+}
+.t-name { font-weight: 600; font-size: 0.9rem; }
+.t-role { font-size: 0.75rem; color: var(--text-sec); }
+.testimonials-nav {
+  display: flex; align-items: center; justify-content: center;
+  gap: 1.5rem; margin-top: 2rem;
+}
+.t-btn {
+  width: 44px; height: 44px; border-radius: 50%;
+  border: 1px solid var(--border) !important;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1rem; color: var(--text-sec);
+  transition: border-color 0.2s, color 0.2s;
+}
+.t-btn:hover { border-color: var(--accent) !important; color: var(--accent); }
+.t-dots { display: flex; gap: 0.5rem; }
+.t-dot {
+  width: 6px; height: 6px; border-radius: 50%;
+  background: var(--border); border: none !important;
+  transition: background 0.2s, width 0.2s;
+}
+.t-dot.active { background: var(--accent); width: 20px; border-radius: 3px; }
+
+/* ── CONTACT ─────────────────────────────────────────── */
+.contact-inner { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(3rem, 6vw, 6rem); align-items: start; }
+.contact-headline {
+  font-family: var(--font-display);
+  font-size: clamp(2.8rem, 5vw, 5rem);
+  font-weight: 700; letter-spacing: -0.03em; line-height: 1.04;
+  margin-bottom: 1.25rem;
+}
+.contact-sub { color: var(--text-sec); font-size: 1rem; line-height: 1.7; margin-bottom: 2.5rem; }
+
+.contact-links { display: flex; flex-direction: column; gap: 1rem; }
+.contact-link {
+  display: flex; align-items: center; gap: 1rem;
+  padding: 1.1rem 1.25rem; border-radius: 14px;
+  border: 1px solid var(--border); background: var(--bg-card);
+  transition: border-color 0.2s, transform 0.2s;
+}
+.contact-link:hover { border-color: var(--accent); transform: translateX(4px); }
+.cl-icon { font-size: 1.2rem; color: var(--accent); width: 28px; text-align: center; flex-shrink: 0; }
+.cl-label { font-size: 0.65rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-sec); margin-bottom: 0.15rem; }
+.cl-val { font-size: 0.9rem; font-weight: 500; }
+
+/* Contact Form */
+.contact-form-wrap { }
+.contact-form { display: flex; flex-direction: column; gap: 1.25rem; }
+.form-group { display: flex; flex-direction: column; gap: 0.5rem; }
+.form-group label {
+  font-size: 0.72rem; font-weight: 600; letter-spacing: 0.1em;
+  text-transform: uppercase; color: var(--text-sec);
+}
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%; background: var(--bg-card); color: var(--text);
+  border: 1px solid var(--border); border-radius: 10px;
+  padding: 0.9rem 1.1rem; font-size: 0.9rem;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  outline: none; resize: vertical;
+  appearance: none;
+}
+.form-group input::placeholder,
+.form-group textarea::placeholder { color: rgba(255,255,255,0.2); }
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(0,193,106,0.12);
+}
+.form-group select { cursor: none; }
+.form-group select option { background: var(--bg-card); }
+
+/* ── FOOTER ──────────────────────────────────────────── */
+footer { border-top: 1px solid var(--border); padding-top: 3rem; padding-bottom: 2rem; }
+.footer-divider {
+  height: 1px; background: linear-gradient(90deg, transparent, var(--accent), transparent);
+  opacity: 0.4; margin-bottom: 3rem;
+}
+.footer-inner {
+  display: flex; align-items: flex-start; gap: 2rem;
+  justify-content: space-between; flex-wrap: wrap;
+  margin-bottom: 2rem;
+}
+.footer-logo {
+  font-family: var(--font-display); font-size: 1.4rem; font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+.footer-tagline { font-size: 0.8rem; color: var(--text-sec); }
+.footer-links { display: flex; gap: 2rem; flex-wrap: wrap; }
+.footer-links a { font-size: 0.82rem; color: var(--text-sec); transition: color 0.2s; }
+.footer-links a:hover { color: var(--text); }
+.footer-socials { display: flex; gap: 1.25rem; }
+.footer-socials a {
+  font-size: 0.72rem; font-weight: 700; letter-spacing: 0.05em;
+  color: var(--text-sec); transition: color 0.2s;
+}
+.footer-socials a:hover { color: var(--accent); }
+.footer-bottom {
+  display: flex; align-items: center; justify-content: space-between;
+  padding-top: 1.5rem; border-top: 1px solid var(--border);
+  font-size: 0.75rem; color: var(--text-sec);
+}
+.back-to-top {
+  font-size: 0.75rem; font-weight: 600; color: var(--text-sec);
+  letter-spacing: 0.06em; transition: color 0.2s;
+}
+.back-to-top:hover { color: var(--accent); }
+
+/* ── REVEAL ANIMATIONS ───────────────────────────────── */
+.reveal-fade { opacity: 0; transform: translateY(20px); }
+.reveal-up { opacity: 0; transform: translateY(40px); }
+.revealed { opacity: 1 !important; transform: translateY(0) !important; transition: opacity 0.7s var(--ease-out), transform 0.7s var(--ease-out); }
+
+/* ── MAGNETIC ────────────────────────────────────────── */
+.magnetic { transition: transform 0.4s var(--ease-out); }
+
+/* ── RESPONSIVE ──────────────────────────────────────── */
+@media (max-width: 1024px) {
+  .hero-inner { grid-template-columns: 1fr; }
+  .hero-right { display: none; }
+  .about-grid { grid-template-columns: 1fr; }
+  .about-portrait-wrap { max-width: 320px; }
+  .projects-grid {
+    grid-template-columns: 1fr;
+    grid-template-areas: "wide1" "card1" "card2" "card3" "card4" "wide2";
+  }
+  .project-card--wide { grid-template-columns: 1fr; }
+  .contact-inner { grid-template-columns: 1fr; }
+  .testimonial-card { min-width: calc(100% - 1.5rem); }
+  .skills-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 768px) {
+  .nav-links, #nav .btn-sm { display: none; }
+  .nav-toggle { display: flex; }
+  .skills-grid { grid-template-columns: 1fr; }
+  .footer-inner { flex-direction: column; gap: 2rem; }
+  body { cursor: auto; }
+  #cursor { display: none; }
+}
+  </style>
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════════════════════ -->
+  <!-- LOADER                                              -->
+  <!-- ═══════════════════════════════════════════════════ -->
+  <div id="loader">
+    <div class="loader-inner">
+      <div class="loader-logo">
+        <span class="loader-logo-n">N</span><span class="loader-logo-c">C</span>
+      </div>
+      <div class="loader-bar-wrap">
+        <div class="loader-bar"></div>
+      </div>
+      <div class="loader-percent"><span id="loader-num">0</span>%</div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════ -->
+  <!-- CUSTOM CURSOR                                       -->
+  <!-- ═══════════════════════════════════════════════════ -->
+  <div id="cursor">
+    <div class="cursor-dot"></div>
+    <div class="cursor-ring"></div>
+    <span class="cursor-label">View</span>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════ -->
+  <!-- NAVIGATION                                          -->
+  <!-- ═══════════════════════════════════════════════════ -->
+  <header id="nav">
+    <nav class="nav-inner container">
+      <a href="#" class="nav-logo" aria-label="Niladri Chatterjee">NC<span class="accent-dot">.</span></a>
+      <ul class="nav-links" role="list">
+        <li><a href="#hero" class="nav-link">Home</a></li>
+        <li><a href="#projects" class="nav-link">Projects</a></li>
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#skills" class="nav-link">Skills</a></li>
+        <li><a href="#experience" class="nav-link">Experience</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+      <a href="#contact" class="btn btn-sm magnetic" data-magnetic>Let's Talk</a>
+      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span>
+      </button>
+    </nav>
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+      <ul role="list">
+        <li><a href="#hero" class="mobile-link">Home</a></li>
+        <li><a href="#projects" class="mobile-link">Projects</a></li>
+        <li><a href="#about" class="mobile-link">About</a></li>
+        <li><a href="#skills" class="mobile-link">Skills</a></li>
+        <li><a href="#experience" class="mobile-link">Experience</a></li>
+        <li><a href="#contact" class="mobile-link">Contact</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ═══════════════════════════════════════════════════ -->
+    <!-- HERO                                                -->
+    <!-- ═══════════════════════════════════════════════════ -->
+    <section id="hero">
+      <div class="hero-grid-bg" aria-hidden="true"></div>
+      <div class="hero-noise" aria-hidden="true"></div>
+
+      <div class="container hero-inner">
+        <!-- Left -->
+        <div class="hero-left">
+          <div class="hero-tags">
+            <span class="tag-pill reveal-fade">Brand Identity Designer</span>
+            <span class="tag-pill reveal-fade">Packaging Designer</span>
+            <span class="tag-pill reveal-fade">Web Designer</span>
+          </div>
+
+          <h1 class="hero-headline">
+            <span class="split-line">Build Brands</span>
+            <span class="split-line accent-word">That People</span>
+            <span class="split-line">Remember.</span>
+          </h1>
+
+          <p class="hero-body reveal-fade">
+            Creating meaningful visual identities, packaging systems, websites, and digital experiences that help businesses grow and leave lasting impressions.
+          </p>
+
+          <div class="hero-ctas reveal-fade">
+            <a href="#projects" class="btn btn-primary magnetic" data-magnetic>View Projects</a>
+            <a href="#" class="btn btn-ghost magnetic" data-magnetic download>Download CV</a>
+          </div>
+
+          <div class="hero-stats reveal-fade">
+            <div class="stat">
+              <span class="stat-num">20<span class="accent">+</span></span>
+              <span class="stat-label">Brands Created</span>
+            </div>
+            <div class="stat-divider" aria-hidden="true"></div>
+            <div class="stat">
+              <span class="stat-num">100<span class="accent">+</span></span>
+              <span class="stat-label">Designs Delivered</span>
+            </div>
+            <div class="stat-divider" aria-hidden="true"></div>
+            <div class="stat">
+              <span class="stat-num">4<span class="accent">+</span></span>
+              <span class="stat-label">Years Experience</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Floating Mockup Stack -->
+        <div class="hero-right" id="heroRight" aria-hidden="true">
+          <div class="mockup-stack">
+            <div class="mockup-card mockup-1">
+              <div class="mockup-inner" style="background: linear-gradient(135deg,#0a2a1a 0%,#00C16A22 100%)">
+                <div class="mock-logo">Greensip</div>
+                <div class="mock-tagline">Pure. Organic. Real.</div>
+                <div class="mock-shape"></div>
+              </div>
+            </div>
+            <div class="mockup-card mockup-2">
+              <div class="mockup-inner" style="background: linear-gradient(135deg,#1a0a00 0%,#ff6b0022 100%)">
+                <div class="mock-logo">Theeka</div>
+                <div class="mock-tagline">Bold Spice Collective</div>
+                <div class="mock-shape-b"></div>
+              </div>
+            </div>
+            <div class="mockup-card mockup-3">
+              <div class="mockup-inner" style="background: linear-gradient(135deg,#0a0a1a 0%,#6b00ff22 100%)">
+                <div class="mock-logo">Kotori</div>
+                <div class="mock-tagline">Japanese Craft Coffee</div>
+                <div class="mock-shape-c"></div>
+              </div>
+            </div>
+            <div class="mockup-card mockup-4">
+              <div class="mockup-inner" style="background: linear-gradient(135deg,#1a0a0a 0%,#ff003322 100%)">
+                <div class="mock-logo">Midnight Brew</div>
+                <div class="mock-tagline">Dark. Intense. Ritual.</div>
+                <div class="mock-shape-d"></div>
+              </div>
+            </div>
+          </div>
+          <div class="hero-glow" aria-hidden="true"></div>
+        </div>
+      </div>
+
+      <!-- Scroll indicator -->
+      <div class="scroll-indicator reveal-fade" aria-label="Scroll down">
+        <span class="scroll-line"></span>
+        <span class="scroll-text">Scroll</span>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════ -->
+    <!-- MARQUEE                                             -->
+    <!-- ═══════════════════════════════════════════════════ -->
+    <div class="marquee-section" aria-hidden="true">
+      <div class="marquee-track">
+        <span>Brand Identity</span><span class="marquee-dot">✦</span>
+        <span>Packaging Design</span><span class="marquee-dot">✦</span>
+        <span>Visual Systems</span><span class="marquee-dot">✦</span>
+        <span>Web Design</span><span class="marquee-dot">✦</span>
+        <span>Motion Graphics</span><span class="marquee-dot">✦</span>
+        <span>Social Media</span><span class="marquee-dot">✦</span>
+        <span>Brand Identity</span><span class="marquee-dot">✦</span>
+        <span>Packaging Design</span><span class="marquee-dot">✦</span>
+        <span>Visual Systems</span><span class="marquee-dot">✦</span>
+        <span>Web Design</span><span class="marquee-dot">✦</span>
+        <span>Motion Graphics</span><span class="marquee-dot">✦</span>
+        <span>Social Media</span><span class="marquee-dot">✦</span>
+      </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════════════════ -->
+    <!-- ABOUT                                               -->
+    <!-- ═══════════════════════════════════════════════════ -->
+    <section id="about" class="section">
+      <div class="container about-grid">
+        <!-- Left: Portrait area -->
+        <div class="about-portrait-wrap reveal-up">
+          <div class="about-portrait">
+            <div class="portrait-placeholder">
+              <div class="portrait-monogram">NC</div>
+              <div class="portrait-bg-shape"></div>
+            </div>
+            <div class="about-badge">
+              <span class="badge-num accent">4+</span>
+              <span class="badge-txt">Years<br>Experience</span>
+            </div>
+          </div>
+          <div class="about-caption">Based in India</div>
+        </div>
+
+        <!-- Right: Story -->
+        <div class="about-story">
+          <div class="section-eyebrow reveal-fade">About Me</div>
+          <h2 class="section-headline reveal-up">
+            Design is how I<br>
+            <em>translate ideas</em><br>
+            into identity.
+          </h2>
+          <div class="about-body reveal-fade">
+            <p>I'm Niladri Chatterjee, a Brand Identity & Visual Designer from India. For over four years, I've been helping businesses discover their visual voice — turning ambiguous ideas into clear, confident brands that people trust and remember.</p>
+            <p>My work spans brand identity, packaging design, social media, and web design. I believe every brand has a soul waiting to be expressed. My job is to find it, refine it, and bring it to life across every touchpoint.</p>
+          </div>
+
+          <div class="about-expertise reveal-fade">
+            <div class="expertise-item"><span class="expertise-icon">◈</span> Brand Identity & Logo Design</div>
+            <div class="expertise-item"><span class="expertise-icon">◈</span> Packaging Design Systems</div>
+            <div class="expertise-item"><span class="expertise-icon">◈</span> Social Media Campaigns</div>
+            <div class="expertise-item"><span class="expertise-icon">◈</span> Web Design & UI</div>
+            <div class="expertise-item"><span class="expertise-icon">◈</span> Motion Graphics</div>
+          </div>
+
+          <a href="#contact" class="btn btn-primary magnetic reveal-fade" data-magnetic>Work With Me</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════ -->
+    <!-- FEATURED PROJECTS                                   -->
+    <!-- ═══════════════════════════════════════════════════ -->
+    <section id="projects" class="section">
+      <div class="container">
+        <div class="section-header reveal-fade">
+          <div class="section-eyebrow">Selected Work</div>
+          <h2 class="section-headline reveal-up">Featured<br><em>Projects</em></h2>
+          <p class="section-sub reveal-fade">Six brands. Six stories. Each one built from scratch.</p>
+        </div>
+
+        <div class="projects-grid">
+
+          <!-- Shaan Bazaar -->
+          <article class="project-card project-card--wide reveal-up cursor-project" data-cursor-label="View">
+            <div class="project-img">
+              <div class="project-color-block" style="--proj-color: #e8a020; --proj-color-2: #1a0e00">
+                <div class="proj-brand-name">Shaan Bazaar</div>
+                <div class="proj-tagline">Retail Branding</div>
+                <div class="proj-shapes">
+                  <div class="ps ps-circle"></div>
+                  <div class="ps ps-rect"></div>
+                </div>
+              </div>
+            </div>
+            <div class="project-info">
+              <h3 class="project-title">Shaan Bazaar</h3>
+              <div class="project-meta">
+                <span class="project-tag">Brand Identity</span>
+                <span class="project-tag">Retail</span>
+                <span class="project-year">2024</span>
+              </div>
+              <p class="project-desc">A vibrant retail brand identity that bridges tradition with contemporary commerce — bold, trustworthy, and unmistakably Indian.</p>
+              <a href="project-shaan.html" class="project-link magnetic" data-magnetic>View Case Study <span>→</span></a>
+            </div>
+          </article>
+
+          <!-- Theeka -->
+          <article class="project-card reveal-up cursor-project" data-cursor-label="View">
+            <div class="project-img">
+              <div class="project-color-block" style="--proj-color: #ff4500; --proj-color-2: #0d0500">
+                <div class="proj-brand-name">Theeka</div>
+                <div class="proj-tagline">Spice Brand</div>
+                <div class="proj-shapes">
+                  <div class="ps ps-tri"></div>
+                </div>
+              </div>
+            </div>
+            <div class="project-info">
+              <h3 class="project-title">Theeka</h3>
+              <div class="project-meta">
+                <span class="project-tag">Packaging</span>
+                <span class="project-tag">FMCG</span>
+                <span class="project-year">2024</span>
+              </div>
+              <a href="project-theeka.html" class="project-link magnetic" data-magnetic>View Case Study <span>→</span></a>
+            </div>
+          </article>
+
+          <!-- Kotori -->
+          <article class="project-card reveal-up cursor-project" data-cursor-label="View">
+            <div class="project-img">
+              <div class="project-color-block" style="--proj-color: #7b5ea7; --proj-color-2: #0a0514">
+                <div class="proj-brand-name">Kotori</div>
+                <div class="proj-tagline">Japanese Craft Coffee</div>
+                <div class="proj-shapes">
+                  <div class="ps ps-circle-sm"></div>
+                  <div class="ps ps-circle-sm-2"></div>
+                </div>
+              </div>
+            </div>
+            <div class="project-info">
+              <h3 class="project-title">Kotori</h3>
+              <div class="project-meta">
+                <span class="project-tag">Brand Identity</span>
+                <span class="project-tag">Café</span>
+                <span class="project-year">2023</span>
+              </div>
+              <a href="project-kotori.html" class="project-link magnetic" data-magnetic>View Case Study <span>→</span></a>
+            </div>
+          </article>
+
+          <!-- Greensip -->
+          <article class="project-card reveal-up cursor-project" data-cursor-label="View">
+            <div class="project-img">
+              <div class="project-color-block" style="--proj-color: #00C16A; --proj-color-2: #001a0e">
+                <div class="proj-brand-name">Greensip</div>
+                <div class="proj-tagline">Organic Beverages</div>
+                <div class="proj-shapes">
+                  <div class="ps ps-leaf"></div>
+                </div>
+              </div>
+            </div>
+            <div class="project-info">
+              <h3 class="project-title">Greensip</h3>
+              <div class="project-meta">
+                <span class="project-tag">Packaging</span>
+                <span class="project-tag">FMCG</span>
+                <span class="project-year">2023</span>
+              </div>
+              <a href="project-greensip.html" class="project-link magnetic" data-magnetic>View Case Study <span>→</span></a>
+            </div>
+          </article>
+
+          <!-- Midnight Brew -->
+          <article class="project-card reveal-up cursor-project" data-cursor-label="View">
+            <div class="project-img">
+              <div class="project-color-block" style="--proj-color: #c0a060; --proj-color-2: #0a0800">
+                <div class="proj-brand-name">Midnight Brew</div>
+                <div class="proj-tagline">Artisan Coffee</div>
+                <div class="proj-shapes">
+                  <div class="ps ps-moon"></div>
+                </div>
+              </div>
+            </div>
+            <div class="project-info">
+              <h3 class="project-title">Midnight Brew</h3>
+              <div class="project-meta">
+                <span class="project-tag">Packaging</span>
+                <span class="project-tag">Coffee</span>
+                <span class="project-year">2023</span>
+              </div>
+              <a href="project-midnight.html" class="project-link magnetic" data-magnetic>View Case Study <span>→</span></a>
+            </div>
+          </article>
+
+          <!-- Utsav Electronics -->
+          <article class="project-card project-card--wide reveal-up cursor-project" data-cursor-label="View">
+            <div class="project-img">
+              <div class="project-color-block" style="--proj-color: #0066ff; --proj-color-2: #00001a">
+                <div class="proj-brand-name">Utsav Electronics</div>
+                <div class="proj-tagline">Electronics Retail</div>
+                <div class="proj-shapes">
+                  <div class="ps ps-bolt"></div>
+                </div>
+              </div>
+            </div>
+            <div class="project-info">
+              <h3 class="project-title">Utsav Electronics</h3>
+              <div class="project-meta">
+                <span class="project-tag">Brand Identity</span>
+                <span class="project-tag">Retail</span>
+                <span class="project-year">2022</span>
+              </div>
+              <p class="project-desc">A modern electronics retail brand built for trust and scale — clean, confident, and engineered for growth across physical and digital spaces.</p>
+              <a href="project-utsav.html" class="project-link magnetic" data-magnetic>View Case Study <span>→</span></a>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════ -->
+    <!-- SKILLS                                              -->
+    <!-- ═══════════════════════════════════════════════════ -->
+    <section id="skills" class="section">
+      <div class="container">
+        <div class="section-header reveal-fade">
+          <div class="section-eyebrow">Expertise</div>
+          <h2 class="section-headline reveal-up">What I<br><em>Bring</em></h2>
+        </div>
+
+        <div class="skills-grid">
+          <div class="skill-card reveal-up" data-tilt data-tilt-max="8" data-tilt-speed="400" data-tilt-glare data-tilt-max-glare="0.1">
+            <div class="skill-icon">◈</div>
+            <h3 class="skill-name">Brand Identity</h3>
+            <p class="skill-desc">Logo design, visual systems, brand guidelines, and identity architecture.</p>
+          </div>
+          <div class="skill-card reveal-up" data-tilt data-tilt-max="8" data-tilt-speed="400">
+            <div class="skill-icon">⬡</div>
+            <h3 class="skill-name">Packaging Design</h3>
+            <p class="skill-desc">Structural concepts, label design, dieline creation, and print production.</p>
+          </div>
+          <div class="skill-card reveal-up" data-tilt data-tilt-max="8" data-tilt-speed="400">
+            <div class="skill-icon">⊞</div>
+            <h3 class="skill-name">UI & Web Design</h3>
+            <p class="skill-desc">Interface design, wireframing, prototyping, and frontend development.</p>
+          </div>
+          <div class="skill-card reveal-up" data-tilt data-tilt-max="8" data-tilt-speed="400">
+            <div class="skill-icon">◎</div>
+            <h3 class="skill-name">Social Media</h3>
+            <p class="skill-desc">Campaign design, content systems, templates, and visual storytelling.</p>
+          </div>
+          <div class="skill-card reveal-up" data-tilt data-tilt-max="8" data-tilt-speed="400">
+            <div class="skill-icon">▷</div>
+            <h3 class="skill-name">Motion Graphics</h3>
+            <p class="skill-desc">Animated logos, transitions, explainer videos, and reel creation.</p>
+          </div>
+          <div class="skill-card reveal-up" data-tilt data-tilt-max="8" data-tilt-speed="400">
+            <div class="skill-icon">✦</div>
+            <h3 class="skill-name">Visual Strategy</h3>
+            <p class="skill-desc">Brand research, competitor analysis, moodboarding, and creative direction.</p>
+          </div>
+        </div>
+
+        <!-- Tool badges -->
+        <div class="tools-row reveal-fade">
+          <div class="tool-badge">Figma</div>
+          <div class="tool-badge">Illustrator</div>
+          <div class="tool-badge">Photoshop</div>
+          <div class="tool-badge">After Effects</div>
+          <div class="tool-badge">CorelDRAW</div>
+          <div class="tool-badge">HTML</div>
+          <div class="tool-badge">CSS</div>
+          <div class="tool-badge">JavaScript</div>
+          <div class="tool-badge">React</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════ -->
+    <!-- EXPERIENCE TIMELINE                                 -->
+    <!-- ═══════════════════════════════════════════════════ -->
+    <section id="experience" class="section">
+      <div class="container">
+        <div class="section-header reveal-fade">
+          <div class="section-eyebrow">Journey</div>
+          <h2 class="section-headline reveal-up">Experience</h2>
+        </div>
+
+        <div class="timeline">
+          <div class="timeline-line" id="timelineLine" aria-hidden="true"></div>
+
+          <div class="timeline-item reveal-up">
+            <div class="timeline-dot"></div>
+            <div class="timeline-date">2022 — Present</div>
+            <div class="timeline-content">
+              <h3 class="timeline-title">Freelance Brand Designer</h3>
+              <p class="timeline-company">Independent</p>
+              <p class="timeline-desc">Working directly with startups and established businesses across India and internationally — delivering brand identities, packaging systems, and digital design solutions.</p>
+              <div class="timeline-tags">
+                <span>Brand Identity</span>
+                <span>Packaging</span>
+                <span>Web Design</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="timeline-item reveal-up">
+            <div class="timeline-dot"></div>
+            <div class="timeline-date">2021 — 2022</div>
+            <div class="timeline-content">
+              <h3 class="timeline-title">Visual Designer</h3>
+              <p class="timeline-company">Sparking Ads Agency</p>
+              <p class="timeline-desc">Led visual design across client campaigns, developing social media systems, brand collateral, and digital assets for a diverse portfolio of clients.</p>
+              <div class="timeline-tags">
+                <span>Social Media</span>
+                <span>Print Design</span>
+                <span>Campaigns</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="timeline-item reveal-up">
+            <div class="timeline-dot"></div>
+            <div class="timeline-date">2020 — 2021</div>
+            <div class="timeline-content">
+              <h3 class="timeline-title">In-House Designer</h3>
+              <p class="timeline-company">Utsav Electronics</p>
+              <p class="timeline-desc">Handled all visual communication for the retail chain — from in-store signage and promotional materials to the complete brand identity refresh.</p>
+              <div class="timeline-tags">
+                <span>Retail Branding</span>
+                <span>Signage</span>
+                <span>Print</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="timeline-item reveal-up">
+            <div class="timeline-dot"></div>
+            <div class="timeline-date">2019 — 2020</div>
+            <div class="timeline-content">
+              <h3 class="timeline-title">Design Assistant</h3>
+              <p class="timeline-company">Shaan Bazaar</p>
+              <p class="timeline-desc">Started my professional journey assisting with graphic design for marketing materials — learning the fundamentals of commercial design in a fast-paced retail environment.</p>
+              <div class="timeline-tags">
+                <span>Graphic Design</span>
+                <span>Marketing</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════ -->
+    <!-- TESTIMONIALS                                        -->
+    <!-- ═══════════════════════════════════════════════════ -->
+    <section id="testimonials" class="section">
+      <div class="container">
+        <div class="section-header reveal-fade">
+          <div class="section-eyebrow">Kind Words</div>
+          <h2 class="section-headline reveal-up">What Clients<br><em>Say</em></h2>
+        </div>
+
+        <div class="testimonials-slider">
+          <div class="testimonials-track" id="testimonialsTrack">
+
+            <div class="testimonial-card">
+              <div class="t-stars" aria-label="5 stars">★★★★★</div>
+              <p class="t-quote">"Niladri didn't just design a logo — he gave our brand a heartbeat. The identity system he created has become the cornerstone of everything we do. Clients love it."</p>
+              <div class="t-author">
+                <div class="t-avatar">RS</div>
+                <div class="t-info">
+                  <div class="t-name">Rahul Sharma</div>
+                  <div class="t-role">Founder, Greensip</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="testimonial-card">
+              <div class="t-stars" aria-label="5 stars">★★★★★</div>
+              <p class="t-quote">"The Theeka packaging design completely transformed how our product is perceived on shelves. Sales went up 40% in the first month after the rebrand. Worth every rupee."</p>
+              <div class="t-author">
+                <div class="t-avatar">PM</div>
+                <div class="t-info">
+                  <div class="t-name">Priya Mehta</div>
+                  <div class="t-role">CEO, Theeka Spice Co.</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="testimonial-card">
+              <div class="t-stars" aria-label="5 stars">★★★★★</div>
+              <p class="t-quote">"Working with Niladri was effortless. He understood our Japanese-inspired café concept immediately and delivered a brand identity that feels both authentic and modern."</p>
+              <div class="t-author">
+                <div class="t-avatar">AK</div>
+                <div class="t-info">
+                  <div class="t-name">Aditya Kumar</div>
+                  <div class="t-role">Owner, Kotori Café</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="testimonial-card">
+              <div class="t-stars" aria-label="5 stars">★★★★★</div>
+              <p class="t-quote">"The attention to detail in every asset was remarkable. Our social media presence completely transformed — engagement tripled within two months of launching the new system."</p>
+              <div class="t-author">
+                <div class="t-avatar">SJ</div>
+                <div class="t-info">
+                  <div class="t-name">Sneha Jain</div>
+                  <div class="t-role">Marketing Head, Utsav Electronics</div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="testimonials-nav" role="group" aria-label="Testimonial navigation">
+            <button class="t-btn" id="tPrev" aria-label="Previous testimonial">←</button>
+            <div class="t-dots" id="tDots" role="tablist"></div>
+            <button class="t-btn" id="tNext" aria-label="Next testimonial">→</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════ -->
+    <!-- CONTACT                                             -->
+    <!-- ═══════════════════════════════════════════════════ -->
+    <section id="contact" class="section">
+      <div class="container">
+        <div class="contact-inner">
+          <div class="contact-left reveal-up">
+            <div class="section-eyebrow">Get In Touch</div>
+            <h2 class="contact-headline">
+              Let's Build<br>
+              Something<br>
+              <em class="accent-italic">Amazing.</em>
+            </h2>
+            <p class="contact-sub reveal-fade">Have a project in mind? I'd love to hear about it. Let's create something remarkable together.</p>
+
+            <div class="contact-links reveal-fade">
+              <a href="mailto:niladri@example.com" class="contact-link magnetic" data-magnetic>
+                <span class="cl-icon">✉</span>
+                <div>
+                  <div class="cl-label">Email</div>
+                  <div class="cl-val">niladri@example.com</div>
+                </div>
+              </a>
+              <a href="https://wa.me/91XXXXXXXXXX" class="contact-link magnetic" data-magnetic target="_blank" rel="noopener">
+                <span class="cl-icon">◎</span>
+                <div>
+                  <div class="cl-label">WhatsApp</div>
+                  <div class="cl-val">Message me directly</div>
+                </div>
+              </a>
+              <a href="https://linkedin.com/in/niladri" class="contact-link magnetic" data-magnetic target="_blank" rel="noopener">
+                <span class="cl-icon">◈</span>
+                <div>
+                  <div class="cl-label">LinkedIn</div>
+                  <div class="cl-val">Connect professionally</div>
+                </div>
+              </a>
+              <a href="https://behance.net/niladri" class="contact-link magnetic" data-magnetic target="_blank" rel="noopener">
+                <span class="cl-icon">⬡</span>
+                <div>
+                  <div class="cl-label">Behance</div>
+                  <div class="cl-val">View full portfolio</div>
+                </div>
+              </a>
+            </div>
+          </div>
+
+          <!-- Contact Form -->
+          <div class="contact-form-wrap reveal-up">
+            <div class="contact-form">
+              <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" placeholder="Your name" autocomplete="name" />
+              </div>
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="your@email.com" autocomplete="email" />
+              </div>
+              <div class="form-group">
+                <label for="project">Project Type</label>
+                <select id="project" name="project">
+                  <option value="">Select a service</option>
+                  <option>Brand Identity</option>
+                  <option>Packaging Design</option>
+                  <option>Web Design</option>
+                  <option>Social Media Design</option>
+                  <option>Motion Graphics</option>
+                  <option>Other</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" rows="4" placeholder="Tell me about your project..."></textarea>
+              </div>
+              <button type="button" class="btn btn-primary btn-full magnetic" id="formSubmit" data-magnetic>Send Message</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ═══════════════════════════════════════════════════ -->
+  <!-- FOOTER                                              -->
+  <!-- ═══════════════════════════════════════════════════ -->
+  <footer>
+    <div class="footer-divider" aria-hidden="true"></div>
+    <div class="container footer-inner">
+      <div class="footer-left">
+        <div class="footer-logo">NC<span class="accent-dot">.</span></div>
+        <p class="footer-tagline">Building brands that people remember.</p>
+      </div>
+      <div class="footer-links">
+        <a href="#hero">Home</a>
+        <a href="#projects">Projects</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <div class="footer-socials">
+        <a href="#" aria-label="Behance" target="_blank" rel="noopener">Be</a>
+        <a href="#" aria-label="LinkedIn" target="_blank" rel="noopener">Li</a>
+        <a href="#" aria-label="Instagram" target="_blank" rel="noopener">Ig</a>
+        <a href="#" aria-label="Dribbble" target="_blank" rel="noopener">Dr</a>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <span>© 2025 Niladri Chatterjee. All rights reserved.</span>
+      <button class="back-to-top magnetic" id="backToTop" aria-label="Back to top" data-magnetic>↑ Top</button>
+    </div>
+  </footer>
+
+  
+
+  <script>
+/* ═══════════════════════════════════════════════════════
+   NILADRI CHATTERJEE — Main JavaScript
+   Cursor · Loader · Smooth Scroll · Animations · Nav
+═══════════════════════════════════════════════════════ */
+
+document.addEventListener('DOMContentLoaded', () => {
+
+  /* ── LOADER ─────────────────────────────────────────── */
+  const loader     = document.getElementById('loader');
+  const loaderNum  = document.getElementById('loader-num');
+  const loaderBar  = document.querySelector('.loader-bar');
+  let progress = 0;
+
+  const loaderInterval = setInterval(() => {
+    progress += Math.random() * 12 + 4;
+    if (progress >= 100) {
+      progress = 100;
+      clearInterval(loaderInterval);
+      setTimeout(hideLoader, 350);
+    }
+    loaderNum.textContent = Math.round(progress);
+    loaderBar.style.width = progress + '%';
+  }, 80);
+
+  function hideLoader() {
+    loader.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+    loader.style.opacity    = '0';
+    loader.style.transform  = 'translateY(-4%)';
+    setTimeout(() => {
+      loader.style.display = 'none';
+      initAnimations();
+    }, 800);
+  }
+
+  /* ── LENIS SMOOTH SCROLL ────────────────────────────── */
+  let lenis;
+  function initLenis() {
+    lenis = new Lenis({
+      duration: 1.2,
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      direction: 'vertical',
+      gestureDirection: 'vertical',
+      smooth: true,
+      touchMultiplier: 2,
+    });
+    function raf(time) { lenis.raf(time); requestAnimationFrame(raf); }
+    requestAnimationFrame(raf);
+
+    // Connect GSAP ScrollTrigger to Lenis
+    if (window.ScrollTrigger) {
+      lenis.on('scroll', ScrollTrigger.update);
+    }
+  }
+
+  /* ── CUSTOM CURSOR ───────────────────────────────────── */
+  const cursor     = document.getElementById('cursor');
+  const cursorDot  = document.querySelector('.cursor-dot');
+  const cursorRing = document.querySelector('.cursor-ring');
+  let mouseX = 0, mouseY = 0;
+  let ringX = 0, ringY = 0;
+
+  if (cursor && window.innerWidth > 768) {
+    document.addEventListener('mousemove', (e) => {
+      mouseX = e.clientX; mouseY = e.clientY;
+      cursorDot.style.left  = mouseX + 'px';
+      cursorDot.style.top   = mouseY + 'px';
+    });
+
+    // Smooth ring follows with lerp
+    (function animRing() {
+      ringX += (mouseX - ringX) * 0.12;
+      ringY += (mouseY - ringY) * 0.12;
+      cursorRing.style.left = ringX + 'px';
+      cursorRing.style.top  = ringY + 'px';
+      requestAnimationFrame(animRing);
+    })();
+
+    // Project card hover
+    document.querySelectorAll('.cursor-project').forEach(el => {
+      el.addEventListener('mouseenter', () => cursor.classList.add('cursor-project'));
+      el.addEventListener('mouseleave', () => cursor.classList.remove('cursor-project'));
+    });
+
+    // Magnetic buttons
+    document.querySelectorAll('[data-magnetic]').forEach(el => {
+      el.addEventListener('mousemove', (e) => {
+        const rect = el.getBoundingClientRect();
+        const cx   = rect.left + rect.width / 2;
+        const cy   = rect.top  + rect.height / 2;
+        const dx   = (e.clientX - cx) * 0.35;
+        const dy   = (e.clientY - cy) * 0.35;
+        el.style.transform = `translate(${dx}px, ${dy}px)`;
+      });
+      el.addEventListener('mouseleave', () => {
+        el.style.transform = '';
+      });
+    });
+
+    // Hide cursor when leaving window
+    document.addEventListener('mouseleave', () => { cursor.style.opacity = '0'; });
+    document.addEventListener('mouseenter', () => { cursor.style.opacity = '1'; });
+  }
+
+  /* ── NAVIGATION ─────────────────────────────────────── */
+  const nav        = document.getElementById('nav');
+  const navToggle  = document.querySelector('.nav-toggle');
+  const mobileMenu = document.getElementById('mobileMenu');
+  const mobileLinks = document.querySelectorAll('.mobile-link');
+
+  // Scroll state
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 60);
+  }, { passive: true });
+
+  // Mobile toggle
+  if (navToggle && mobileMenu) {
+    navToggle.addEventListener('click', () => {
+      const open = mobileMenu.classList.toggle('open');
+      navToggle.setAttribute('aria-expanded', open);
+      mobileMenu.setAttribute('aria-hidden', !open);
+      navToggle.querySelectorAll('span')[0].style.transform = open ? 'rotate(45deg) translate(4px, 4px)' : '';
+      navToggle.querySelectorAll('span')[1].style.transform = open ? 'rotate(-45deg) translate(4px, -4px)' : '';
+    });
+    mobileLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.remove('open');
+        navToggle.setAttribute('aria-expanded', false);
+        navToggle.querySelectorAll('span').forEach(s => s.style.transform = '');
+      });
+    });
+  }
+
+  /* ── BACK TO TOP ─────────────────────────────────────── */
+  const backToTop = document.getElementById('backToTop');
+  if (backToTop) {
+    backToTop.addEventListener('click', () => {
+      if (lenis) lenis.scrollTo(0, { duration: 1.5 });
+      else window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
+
+  /* ── HERO PARALLAX ───────────────────────────────────── */
+  const heroRight = document.getElementById('heroRight');
+  if (heroRight && window.innerWidth > 1024) {
+    document.addEventListener('mousemove', (e) => {
+      const { innerWidth: W, innerHeight: H } = window;
+      const nx = (e.clientX / W - 0.5) * 24;
+      const ny = (e.clientY / H - 0.5) * 16;
+      heroRight.style.transform = `translate(${nx}px, ${ny}px)`;
+    });
+  }
+
+  /* ── VANILLA TILT for skill cards ───────────────────── */
+  function initTilt() {
+    if (window.VanillaTilt) {
+      VanillaTilt.init(document.querySelectorAll('[data-tilt]'), {
+        max: 8, speed: 400, glare: true, 'max-glare': 0.08,
+      });
+    }
+  }
+
+  /* ── TESTIMONIALS SLIDER ────────────────────────────── */
+  function initTestimonials() {
+    const track  = document.getElementById('testimonialsTrack');
+    const dotsWr = document.getElementById('tDots');
+    const prev   = document.getElementById('tPrev');
+    const next   = document.getElementById('tNext');
+    if (!track || !dotsWr || !prev || !next) return;
+
+    const cards = track.querySelectorAll('.testimonial-card');
+    let current = 0;
+    let autoInterval;
+
+    // Build dots
+    cards.forEach((_, i) => {
+      const dot = document.createElement('button');
+      dot.className = 't-dot' + (i === 0 ? ' active' : '');
+      dot.setAttribute('role', 'tab');
+      dot.setAttribute('aria-label', `Testimonial ${i + 1}`);
+      dot.addEventListener('click', () => goTo(i));
+      dotsWr.appendChild(dot);
+    });
+
+    function goTo(idx) {
+      current = (idx + cards.length) % cards.length;
+      // Show 2 cards at a time on wide, 1 on narrow
+      const perView  = window.innerWidth > 768 ? 2 : 1;
+      const cardW    = track.querySelector('.testimonial-card').offsetWidth + 24; // gap
+      track.style.transform = `translateX(-${current * cardW}px)`;
+      dotsWr.querySelectorAll('.t-dot').forEach((d, i) => d.classList.toggle('active', i === current));
+    }
+
+    prev.addEventListener('click', () => { goTo(current - 1); resetAuto(); });
+    next.addEventListener('click', () => { goTo(current + 1); resetAuto(); });
+
+    function startAuto() { autoInterval = setInterval(() => goTo(current + 1), 5000); }
+    function resetAuto()  { clearInterval(autoInterval); startAuto(); }
+    startAuto();
+  }
+
+  /* ── TIMELINE LINE ANIMATION ─────────────────────────── */
+  function initTimeline() {
+    const line = document.getElementById('timelineLine');
+    if (!line) return;
+    const timeline = line.parentElement;
+
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const h = timeline.scrollHeight;
+          line.style.height = h + 'px';
+          obs.disconnect();
+        }
+      });
+    }, { threshold: 0.1 });
+    obs.observe(timeline);
+  }
+
+  /* ── SCROLL REVEAL ───────────────────────────────────── */
+  function initReveal() {
+    const els = document.querySelectorAll('.reveal-fade, .reveal-up');
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach((entry, i) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => entry.target.classList.add('revealed'), i * 80);
+          obs.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -5% 0px' });
+    els.forEach(el => obs.observe(el));
+  }
+
+  /* ── HERO HEADLINE STAGGER ───────────────────────────── */
+  function initHeroText() {
+    const lines = document.querySelectorAll('.hero-headline .split-line');
+    lines.forEach((line, i) => {
+      line.style.opacity   = '0';
+      line.style.transform = 'translateY(40px)';
+      line.style.transition = `opacity 0.9s cubic-bezier(0.16,1,0.3,1) ${0.1 + i * 0.12}s, transform 0.9s cubic-bezier(0.16,1,0.3,1) ${0.1 + i * 0.12}s`;
+      setTimeout(() => { line.style.opacity = '1'; line.style.transform = 'translateY(0)'; }, 50);
+    });
+  }
+
+  /* ── MOCKUP FLOAT ANIMATION ──────────────────────────── */
+  function initMockupFloat() {
+    const cards = document.querySelectorAll('.mockup-card');
+    cards.forEach((card, i) => {
+      const amp   = 8 + i * 3;
+      const speed = 3000 + i * 700;
+      const delay = i * 400;
+      card.style.transition = `transform ${speed}ms ease-in-out`;
+
+      setInterval(() => {
+        const y = (Math.sin(Date.now() / speed) * amp);
+        card.style.transform = `translateY(${y}px) rotate(${(i % 2 === 0 ? 1 : -1) * (i + 1)}deg)`;
+      }, 16);
+
+      // Set initial rotation
+      setTimeout(() => {
+        card.style.transform = `rotate(${(i % 2 === 0 ? 1 : -1) * (i + 1)}deg)`;
+      }, delay);
+    });
+  }
+
+  /* ── CONTACT FORM ────────────────────────────────────── */
+  function initForm() {
+    const btn = document.getElementById('formSubmit');
+    if (!btn) return;
+    btn.addEventListener('click', () => {
+      const name    = document.getElementById('name')?.value.trim();
+      const email   = document.getElementById('email')?.value.trim();
+      const message = document.getElementById('message')?.value.trim();
+      if (!name || !email || !message) {
+        btn.textContent = 'Please fill all fields';
+        btn.style.background = '#ff4444';
+        setTimeout(() => { btn.textContent = 'Send Message'; btn.style.background = ''; }, 2500);
+        return;
+      }
+      btn.textContent = 'Message Sent ✓';
+      btn.style.background = '#00C16A';
+      btn.disabled = true;
+      setTimeout(() => { btn.textContent = 'Send Another'; btn.style.background = ''; btn.disabled = false; }, 3500);
+    });
+  }
+
+  /* ── SMOOTH ANCHOR SCROLL ────────────────────────────── */
+  function initAnchorScroll() {
+    document.querySelectorAll('a[href^="#"]').forEach(link => {
+      link.addEventListener('click', (e) => {
+        const href = link.getAttribute('href');
+        if (href === '#') { e.preventDefault(); if (lenis) lenis.scrollTo(0); return; }
+        const target = document.querySelector(href);
+        if (!target) return;
+        e.preventDefault();
+        if (lenis) {
+          lenis.scrollTo(target, { offset: -80, duration: 1.2 });
+        } else {
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+  }
+
+  /* ── INIT ALL ────────────────────────────────────────── */
+  function initAnimations() {
+    if (window.Lenis) initLenis();
+    initReveal();
+    initHeroText();
+    initMockupFloat();
+    initTestimonials();
+    initTimeline();
+    initTilt();
+    initForm();
+    initAnchorScroll();
+  }
+
+  /* ── GSAP (if available) ─────────────────────────────── */
+  window.addEventListener('load', () => {
+    if (window.gsap && window.ScrollTrigger) {
+      gsap.registerPlugin(ScrollTrigger);
+      // Stat counter animation
+      document.querySelectorAll('.stat-num').forEach(el => {
+        const target = parseInt(el.textContent);
+        if (isNaN(target)) return;
+        const accent = el.querySelector('.accent')?.outerHTML || '';
+        gsap.fromTo(el, { textContent: 0 }, {
+          textContent: target, duration: 1.8, ease: 'power2.out',
+          scrollTrigger: { trigger: el, start: 'top 85%', once: true },
+          onUpdate() { el.innerHTML = Math.round(+el.textContent) + accent; }
+        });
+      });
+    }
+  });
+
+});
+  </script>
+</body>
+</html>
