@@ -493,12 +493,12 @@ function initProjectShowcase() {
         'Shaan Bazaar is a modern retail brand identity developed to blend traditional values with contemporary shopping experiences. The project includes logo design, store branding, shopping bags, price tags, employee uniforms, and promotional materials, creating a consistent and memorable customer experience across both physical and digital platforms.',
 
       images: [
-        { src: '/shaanbazzar/LOGO IMG.jpg', alt: 'Shaan Bazaar logo', title: 'Primary Logo', description: 'The primary logo combines modern retail aesthetics with traditional Indian typography to create a memorable and trustworthy brand identity.' },
-        { src: '/shaanbazzar/STORE FONT.jpg', alt: 'Shaan Bazaar STORE FONT', title: 'Store Font', description: 'The store font is designed to be highly readable and visually appealing in a retail environment.' },
-        { src: '/shaanbazzar/CASH COUNTER.jpg', alt: 'Shaan Bazaar CASH COUNTER', title: 'Cash Counter', description: 'The cash counter design emphasizes functionality and security while maintaining a modern look.' },
-        { src: '/shaanbazzar/BAG MOCKUP.jpg', alt: 'Shaan Bazaar BAG MOCKUP', title: 'Bag Mockup', description: 'The bag mockup showcases the packaging design in a real-world application.' },
-        { src: '/shaanbazzar/PRICE TAG.jpg', alt: 'Shaan Bazaar PRICE TAG', title: 'Price Tag', description: 'The price tag design is clean and informative, ensuring customers can easily identify product prices.' },
-        { src: '/shaanbazzar/WORKER IMAGE.jpg', alt: 'Shaan Bazaar WORKER IMAGE', title: 'Worker Image', description: 'The worker image highlights the human element of the brand, emphasizing customer service and quality.' }
+        { src: '/shaanbazzar/LOGO IMG.webp', alt: 'Shaan Bazaar logo', title: 'Primary Logo', description: 'The primary logo combines modern retail aesthetics with traditional Indian typography to create a memorable and trustworthy brand identity.' },
+        { src: '/shaanbazzar/STORE FONT.webp', alt: 'Shaan Bazaar STORE FONT', title: 'Store Font', description: 'The store font is designed to be highly readable and visually appealing in a retail environment.' },
+        { src: '/shaanbazzar/CASH COUNTER.webp', alt: 'Shaan Bazaar CASH COUNTER', title: 'Cash Counter', description: 'The cash counter design emphasizes functionality and security while maintaining a modern look.' },
+        { src: '/shaanbazzar/BAG MOCKUP.webp', alt: 'Shaan Bazaar BAG MOCKUP', title: 'Bag Mockup', description: 'The bag mockup showcases the packaging design in a real-world application.' },
+        { src: '/shaanbazzar/PRICE TAG.webp', alt: 'Shaan Bazaar PRICE TAG', title: 'Price Tag', description: 'The price tag design is clean and informative, ensuring customers can easily identify product prices.' },
+        { src: '/shaanbazzar/WORKER IMAGE.webp', alt: 'Shaan Bazaar WORKER IMAGE', title: 'Worker Image', description: 'The worker image highlights the human element of the brand, emphasizing customer service and quality.' }
       ]
     },
     'theeka': {
@@ -511,9 +511,9 @@ function initProjectShowcase() {
 
 
       images: [
-        { src: '/theekha/mainlogo.jpg', alt: 'Theeka packaging design' },
-        { src: '/theekha/thekkalogo.png', alt: 'Theeka packaging design' },
-        { src: '/theekha/thekkapakeging.png', alt: 'Theeka packaging design' }
+        { src: '/theekha/mainlogo.webp', alt: 'Theeka packaging design' },
+        { src: '/theekha/thekkalogo.webp', alt: 'Theeka packaging design' },
+        { src: '/theekha/thekkapakeging.webp', alt: 'Theeka packaging design' }
       ]
     },
 
@@ -530,12 +530,12 @@ function initProjectShowcase() {
 
 
       images: [
-        { src: '/fitfushion/logo.jpg', alt: 'FIT FUSHION brand identity' },
-        { src: '/fitfushion/brandmockup.jpg', alt: 'FIT FUSHION brand identity' },
-        { src: '/fitfushion/men mockup.jpg', alt: 'FIT FUSHION brand identity' },
-        { src: '/fitfushion/water bottle.jpg', alt: 'FIT FUSHION brand identity' },
-        { src: '/fitfushion/weight.jpg', alt: 'FIT FUSHION brand identity' },
-        { src: '/fitfushion/app logo.jpg', alt: 'FIT FUSHION brand identity' }
+        { src: '/fitfushion/logo.webp', alt: 'FIT FUSHION brand identity' },
+        { src: '/fitfushion/brandmockup.webp', alt: 'FIT FUSHION brand identity' },
+        { src: '/fitfushion/men mockup.webp', alt: 'FIT FUSHION brand identity' },
+        { src: '/fitfushion/water bottle.webp', alt: 'FIT FUSHION brand identity' },
+        { src: '/fitfushion/weight.webp', alt: 'FIT FUSHION brand identity' },
+        { src: '/fitfushion/app logo.webp', alt: 'FIT FUSHION brand identity' }
       ]
     },
 
@@ -552,10 +552,10 @@ function initProjectShowcase() {
         'Greensip is a fresh, eco-friendly beverage packaging design project for a plant-based juice brand. The work includes label design, packaging structure, and brand visuals aimed at conveying health, nature, and premium sustainability.',
 
       images: [
-        { src: '/greensip/logo.jpg', alt: 'Greensip Logo' },
-        { src: '/greensip/packeging.png', alt: 'Greensip packaging' },
-        { src: '/greensip/sticker.jpg', alt: 'Greensip packaging' },
-        { src: '/greensip/bag.jpg', alt: 'Greensip packaging' },
+        { src: '/greensip/logo.webp', alt: 'Greensip Logo' },
+        { src: '/greensip/packeging.webp', alt: 'Greensip packaging' },
+        { src: '/greensip/sticker.webp', alt: 'Greensip packaging' },
+        { src: '/greensip/bag.webp', alt: 'Greensip packaging' },
       ]
     },
 
@@ -572,15 +572,15 @@ function initProjectShowcase() {
 
       images: [
         {
-          src: '/nolimits/logo.jpg',
+          src: '/nolimits/logo.webp',
           alt: 'NO LIMITS sports footwear branding'
         },
         {
-          src: '/nolimits/instagram.jpg',
+          src: '/nolimits/instagram.webp',
           alt: 'NO LIMITS social media campaign'
         },
         {
-          src: '/nolimits/hoading.jpg',
+          src: '/nolimits/hoading.webp',
           alt: 'NO LIMITS product features'
         },
       ]
@@ -594,11 +594,11 @@ function initProjectShowcase() {
         'Utsav Electronics is a comprehensive brand identity project for a consumer electronics retail chain. The work includes logo design, store branding, packaging, promotional materials, and digital assets aimed at creating a cohesive and modern retail experience.',
 
       images: [
-        { src: '/utsav/logo.jpg', alt: 'Utsav Electronics brand identity' },
-        { src: '/utsav/Citylight Mockup.jpg', alt: 'Utsav Electronics store branding' },
-        { src: '/utsav/ROAD SIDE BANNER.jpg', alt: 'Utsav Electronics promotional materials' },
-        { src: '/utsav/MOBILE MOCKUP.png', alt: 'Utsav Electronics digital assets' },
-        { src: '/utsav/3.jpg', alt: 'Utsav Electronics retail experience' }
+        { src: '/utsav/logo.webp', alt: 'Utsav Electronics brand identity' },
+        { src: '/utsav/Citylight Mockup.webp', alt: 'Utsav Electronics store branding' },
+        { src: '/utsav/ROAD SIDE BANNER.webp', alt: 'Utsav Electronics promotional materials' },
+        { src: '/utsav/MOBILE MOCKUP.webp', alt: 'Utsav Electronics digital assets' },
+        { src: '/utsav/3.webp', alt: 'Utsav Electronics retail experience' }
       ]
     }
   };
