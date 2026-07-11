@@ -1101,7 +1101,7 @@ body {
     background: #0a0c0f;
     color: #f2f3f4;
     font-family: 'Inter', sans-serif;
-    padding: 4rem 1.5rem;
+    padding: 4rem 0px;
 }
 
 .demo-container {
